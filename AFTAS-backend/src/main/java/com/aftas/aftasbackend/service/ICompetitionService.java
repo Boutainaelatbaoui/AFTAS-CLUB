@@ -10,8 +10,9 @@ import java.util.List;
 public interface ICompetitionService {
     public Competition createCompetition(CompetitionDTO competitionDTO);
     public List<CompetitionDTO> getAllCompetitions();
-    public Competition getCompetitionById(Long competitionId);
+    public CompetitionDTO getCompetitionById(Long competitionId);
     public Competition updateCompetition(Long competitionId, CompetitionDTO competitionDTO);
     public void deleteCompetition(Long competitionId);
+    public Competition addMemberToCompetition(Long competitionId, Long memberId);
 }
 

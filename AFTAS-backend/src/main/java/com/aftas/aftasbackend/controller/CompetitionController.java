@@ -37,8 +37,8 @@ public class CompetitionController {
     }
 
     @GetMapping("/{competitionId}")
-    public ResponseEntity<Competition> getCompetitionById(@PathVariable Long competitionId) {
-        Competition competition = competitionService.getCompetitionById(competitionId);
+    public ResponseEntity<CompetitionDTO> getCompetitionById(@PathVariable Long competitionId) {
+        CompetitionDTO competition = competitionService.getCompetitionById(competitionId);
         return new ResponseEntity<>(competition, HttpStatus.OK);
     }
 
@@ -54,6 +54,15 @@ public class CompetitionController {
     public ResponseEntity<String> deleteCompetition(@PathVariable Long competitionId) {
         competitionService.deleteCompetition(competitionId);
         return new ResponseEntity<>("The Competition has been deleted.",HttpStatus.NO_CONTENT);
+    }
+
+    @PostMapping("add-member/{competitionId}/{memberId}")
+    public ResponseEntity<String> addMemberToCompetition(
+            @PathVariable Long competitionId,
+            @PathVariable Long memberId) {
+        competitionService.addMemberToCompetition(competitionId, memberId);
+        return new ResponseEntity<>("Member added to the competition successfully.", HttpStatus.OK);
+
     }
 
 }

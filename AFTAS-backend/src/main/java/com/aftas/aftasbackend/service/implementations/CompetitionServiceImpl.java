@@ -2,25 +2,34 @@ package com.aftas.aftasbackend.service.implementations;
 
 import com.aftas.aftasbackend.model.dto.CompetitionDTO;
 import com.aftas.aftasbackend.model.entities.Competition;
+import com.aftas.aftasbackend.model.entities.Member;
+import com.aftas.aftasbackend.model.entities.Ranking;
 import com.aftas.aftasbackend.repository.CompetitionRepository;
+import com.aftas.aftasbackend.repository.MemberRepository;
+import com.aftas.aftasbackend.repository.RankingRepository;
 import com.aftas.aftasbackend.service.ICompetitionService;
 import jakarta.validation.ValidationException;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class CompetitionServiceImpl implements ICompetitionService {
     private final CompetitionRepository competitionRepository;
+    private final MemberRepository memberRepository;
+    private final RankingRepository rankingRepository;
 
     @Autowired
-    public CompetitionServiceImpl(CompetitionRepository competitionRepository) {
+    public CompetitionServiceImpl(CompetitionRepository competitionRepository, MemberRepository memberRepository, RankingRepository rankingRepository) {
         this.competitionRepository = competitionRepository;
+        this.memberRepository = memberRepository;
+        this.rankingRepository = rankingRepository;
     }
 
     @Override
@@ -54,24 +63,53 @@ public class CompetitionServiceImpl implements ICompetitionService {
     }
 
     @Override
+    public Competition addMemberToCompetition(Long competitionId, Long memberId) {
+        Competition competition = mapDTOToEntity(getCompetitionById(competitionId));
+
+        Member member = memberRepository.findById(memberId)
+                .orElseThrow(() -> new ValidationException("Member not found. Register this member in the club first."));
+
+        if (rankingRepository.existsByCompetitionAndMember(competition, member)) {
+            throw new ValidationException("Member is already added to the competition.");
+        }
+
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        LocalDateTime competitionStartDateTime = LocalDateTime.of(competition.getDate(), competition.getStartTime());
+
+        if (competitionStartDateTime.isAfter(currentDateTime.plusHours(24))) {
+            Ranking ranking = new Ranking();
+            ranking.setCompetition(competition);
+            ranking.setMember(member);
+            rankingRepository.save(ranking);
+
+            return competitionRepository.save(competition);
+        } else {
+            throw new ValidationException("You can be added to this competition just before 24 hours!!");
+        }
+    }
+
+
+    @Override
     public List<CompetitionDTO> getAllCompetitions() {
         List<Competition> competitions = competitionRepository.findAll();
         return competitions.stream().map(this::mapEntityToDTO).collect(Collectors.toList());
     }
 
     @Override
-    public Competition getCompetitionById(Long competitionId) {
-        return competitionRepository.findById(competitionId)
+    public CompetitionDTO getCompetitionById(Long competitionId) {
+        Optional<Competition> competitionOptional = competitionRepository.findById(competitionId);
+        CompetitionDTO competitionDTO = competitionOptional
+                .map(this::mapEntityToDTO)
                 .orElseThrow(() -> new ValidationException("Competition not found with id: " + competitionId));
+
+        return competitionDTO;
     }
+
 
     @Override
     public Competition updateCompetition(Long competitionId, CompetitionDTO competitionDTO) {
-        Competition existingCompetition = getCompetitionById(competitionId);
+        Competition existingCompetition = mapDTOToEntity(getCompetitionById(competitionId));
 
-        if(!isDateNotInCompetition(competitionDTO.getDate())){
-            throw new ValidationException("A competition already exists on the specified date.");
-        }
         if (!isCodeValid(competitionDTO.getCode(), competitionDTO.getLocation(), competitionDTO.getDate())){
             throw new ValidationException("Invalid code format! should be like this ex: Imsouane: pattern: ims-22-12-23.");
         }
@@ -89,7 +127,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
 
     @Override
     public void deleteCompetition(Long competitionId) {
-        Competition existingCompetition = getCompetitionById(competitionId);
+        Competition existingCompetition = mapDTOToEntity(getCompetitionById(competitionId));
         competitionRepository.delete(existingCompetition);
     }
 
