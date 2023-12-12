@@ -12,6 +12,7 @@ import java.time.LocalTime;
 
 @Getter
 @Setter
+@Builder
 public class CompetitionDTO {
     private Long id;
 

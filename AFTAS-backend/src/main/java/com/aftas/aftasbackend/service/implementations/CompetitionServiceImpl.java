@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CompetitionServiceImpl implements ICompetitionService {
@@ -34,11 +35,6 @@ public class CompetitionServiceImpl implements ICompetitionService {
         return competitionRepository.save(competition);
     }
 
-    private Competition mapDTOToEntity(CompetitionDTO competitionDTO) {
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(competitionDTO, Competition.class);
-    }
-
     private boolean isDateNotInCompetition(LocalDate date) {
         List<Competition> existingCompetitions = competitionRepository.findCompetitionByDate(date);
 
@@ -57,6 +53,35 @@ public class CompetitionServiceImpl implements ICompetitionService {
         return generatedCode.equalsIgnoreCase(code);
     }
 
+    @Override
+    public List<CompetitionDTO> getAllCompetitions() {
+        List<Competition> competitions = competitionRepository.findAll();
+        return competitions.stream().map(this::mapEntityToDTO).collect(Collectors.toList());
+    }
 
+    private Competition mapDTOToEntity(CompetitionDTO competitionDTO) {
+        return Competition.builder()
+                .id(competitionDTO.getId())
+                .code(competitionDTO.getCode())
+                .date(competitionDTO.getDate())
+                .startTime(competitionDTO.getStartTime())
+                .endTime(competitionDTO.getEndTime())
+                .numberOfParticipants(competitionDTO.getNumberOfParticipants())
+                .location(competitionDTO.getLocation())
+                .amount(competitionDTO.getAmount())
+                .build();
+    }
 
+    private CompetitionDTO mapEntityToDTO(Competition competition) {
+        return CompetitionDTO.builder()
+                .id(competition.getId())
+                .code(competition.getCode())
+                .date(competition.getDate())
+                .startTime(competition.getStartTime())
+                .endTime(competition.getEndTime())
+                .numberOfParticipants(competition.getNumberOfParticipants())
+                .location(competition.getLocation())
+                .amount(competition.getAmount())
+                .build();
+    }
 }

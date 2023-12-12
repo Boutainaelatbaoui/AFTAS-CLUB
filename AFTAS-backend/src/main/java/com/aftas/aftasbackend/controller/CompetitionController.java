@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/competitions")
 public class CompetitionController {
@@ -26,4 +28,11 @@ public class CompetitionController {
         Competition createdCompetition = competitionService.createCompetition(competitionDTO);
         return new ResponseEntity<>(createdCompetition, HttpStatus.CREATED);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<CompetitionDTO>> getAllCompetitions(){
+        List<CompetitionDTO> competitions = competitionService.getAllCompetitions();
+        return new ResponseEntity<>(competitions, HttpStatus.OK);
+    }
+
 }
