@@ -59,6 +59,40 @@ public class CompetitionServiceImpl implements ICompetitionService {
         return competitions.stream().map(this::mapEntityToDTO).collect(Collectors.toList());
     }
 
+    @Override
+    public Competition getCompetitionById(Long competitionId) {
+        return competitionRepository.findById(competitionId)
+                .orElseThrow(() -> new ValidationException("Competition not found with id: " + competitionId));
+    }
+
+    @Override
+    public Competition updateCompetition(Long competitionId, CompetitionDTO competitionDTO) {
+        Competition existingCompetition = getCompetitionById(competitionId);
+
+        if(!isDateNotInCompetition(competitionDTO.getDate())){
+            throw new ValidationException("A competition already exists on the specified date.");
+        }
+        if (!isCodeValid(competitionDTO.getCode(), competitionDTO.getLocation(), competitionDTO.getDate())){
+            throw new ValidationException("Invalid code format! should be like this ex: Imsouane: pattern: ims-22-12-23.");
+        }
+
+        existingCompetition.setCode(competitionDTO.getCode());
+        existingCompetition.setDate(competitionDTO.getDate());
+        existingCompetition.setStartTime(competitionDTO.getStartTime());
+        existingCompetition.setEndTime(competitionDTO.getEndTime());
+        existingCompetition.setNumberOfParticipants(competitionDTO.getNumberOfParticipants());
+        existingCompetition.setLocation(competitionDTO.getLocation());
+        existingCompetition.setAmount(competitionDTO.getAmount());
+
+        return competitionRepository.save(existingCompetition);
+    }
+
+    @Override
+    public void deleteCompetition(Long competitionId) {
+        Competition existingCompetition = getCompetitionById(competitionId);
+        competitionRepository.delete(existingCompetition);
+    }
+
     private Competition mapDTOToEntity(CompetitionDTO competitionDTO) {
         return Competition.builder()
                 .id(competitionDTO.getId())

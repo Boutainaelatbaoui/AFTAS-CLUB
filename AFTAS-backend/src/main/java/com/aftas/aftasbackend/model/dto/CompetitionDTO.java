@@ -1,5 +1,7 @@
 package com.aftas.aftasbackend.model.dto;
 
+import com.aftas.aftasbackend.model.entities.Hunting;
+import com.aftas.aftasbackend.model.entities.Ranking;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
@@ -9,6 +11,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -37,4 +40,6 @@ public class CompetitionDTO {
 
     @Min(value = 1, message = "The amount should not be less than 1")
     private Double amount;
+    private List<Hunting> huntings;
+    private List<Ranking> rankings;
 }
