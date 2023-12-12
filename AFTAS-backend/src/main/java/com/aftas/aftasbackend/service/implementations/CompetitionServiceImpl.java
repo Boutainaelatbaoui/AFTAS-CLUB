@@ -5,7 +5,6 @@ import com.aftas.aftasbackend.model.entities.Competition;
 import com.aftas.aftasbackend.repository.CompetitionRepository;
 import com.aftas.aftasbackend.service.ICompetitionService;
 import jakarta.validation.ValidationException;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +30,15 @@ public class CompetitionServiceImpl implements ICompetitionService {
     }
 
     private Competition mapDTOToEntity(CompetitionDTO competitionDTO) {
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(competitionDTO, Competition.class);
+        return Competition.builder()
+                .code(competitionDTO.getCode())
+                .amount(competitionDTO.getAmount())
+                .date(competitionDTO.getDate())
+                .endTime(competitionDTO.getEndTime())
+                .startTime(competitionDTO.getStartTime())
+                .location(competitionDTO.getLocation())
+                .numberOfParticipants(competitionDTO.getNumberOfParticipants())
+                .build();
     }
 
     private boolean isDateNotInCompetition(LocalDate date) {

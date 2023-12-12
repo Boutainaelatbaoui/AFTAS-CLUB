@@ -1,5 +1,6 @@
 package com.aftas.aftasbackend.model.dto;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -14,6 +15,7 @@ import java.time.LocalTime;
 public class CompetitionDTO {
     private Long id;
 
+    @Column(unique = false)
     @NotBlank(message = "The code should not be Empty")
     private String code;
 
