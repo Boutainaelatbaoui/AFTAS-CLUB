@@ -19,7 +19,6 @@ public class Competition {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     private String code;
 
     @Column(name = "date")
@@ -34,6 +33,7 @@ public class Competition {
     private Integer numberOfParticipants;
     private String location;
     private Double amount;
+    private Integer limitParticipants;
 
     @OneToMany(mappedBy = "competition")
     private List<Hunting> huntings;

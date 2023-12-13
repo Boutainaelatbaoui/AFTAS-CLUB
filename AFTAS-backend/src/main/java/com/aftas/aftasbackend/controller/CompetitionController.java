@@ -3,7 +3,6 @@ package com.aftas.aftasbackend.controller;
 import com.aftas.aftasbackend.model.dto.CompetitionDTO;
 import com.aftas.aftasbackend.model.entities.Competition;
 import com.aftas.aftasbackend.service.ICompetitionService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

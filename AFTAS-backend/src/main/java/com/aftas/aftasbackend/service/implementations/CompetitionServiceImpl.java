@@ -40,6 +40,9 @@ public class CompetitionServiceImpl implements ICompetitionService {
         if (!isCodeValid(competitionDTO.getCode(), competitionDTO.getLocation(), competitionDTO.getDate())){
             throw new ValidationException("Invalid code format! should be like this ex: Imsouane: pattern: ims-22-12-23.");
         }
+        if (competitionRepository.existsByCode(competitionDTO.getCode())){
+            throw new ValidationException("The code is already exists.");
+        }
         Competition competition =mapDTOToEntity(competitionDTO);
         return competitionRepository.save(competition);
     }
@@ -139,6 +142,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
                 .startTime(competitionDTO.getStartTime())
                 .endTime(competitionDTO.getEndTime())
                 .numberOfParticipants(competitionDTO.getNumberOfParticipants())
+                .limitParticipants(competitionDTO.getLimitParticipants())
                 .location(competitionDTO.getLocation())
                 .amount(competitionDTO.getAmount())
                 .build();
@@ -152,6 +156,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
                 .startTime(competition.getStartTime())
                 .endTime(competition.getEndTime())
                 .numberOfParticipants(competition.getNumberOfParticipants())
+                .limitParticipants(competition.getLimitParticipants())
                 .location(competition.getLocation())
                 .amount(competition.getAmount())
                 .build();

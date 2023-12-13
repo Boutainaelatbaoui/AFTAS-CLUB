@@ -23,7 +23,7 @@ public class CompetitionDTO {
     @NotBlank(message = "The code should not be Empty")
     private String code;
 
-//    @Future(message = "The date should be in Future")
+   @Future(message = "The date should be in Future")
     private LocalDate date;
 
     @NotNull(message = "start time should not be Empty")
@@ -32,7 +32,10 @@ public class CompetitionDTO {
     @NotNull(message = "end time should not be Empty")
     private LocalTime endTime;
 
-    @Min(value = 1, message = "The number of participants should not be less than 1")
+    @NotNull(message = "limit participants should not be Empty")
+    @Min(value = 3, message = "The number of participants should not be less than 3")
+    private Integer limitParticipants;
+
     private Integer numberOfParticipants;
 
     @NotBlank(message = "The location should not be Empty")

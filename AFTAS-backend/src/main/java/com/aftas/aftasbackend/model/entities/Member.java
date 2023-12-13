@@ -31,7 +31,6 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private IdentityDocumentType identityDocument;
 
-    @Column(unique = true)
     private String identityNumber;
 
     @OneToMany(mappedBy = "member")

@@ -1,6 +1,7 @@
 package com.aftas.aftasbackend.controller;
 
 import com.aftas.aftasbackend.model.dto.MemberDTO;
+import com.aftas.aftasbackend.model.dto.Response.MemberDTOResponse;
 import com.aftas.aftasbackend.model.entities.Member;
 import com.aftas.aftasbackend.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,26 @@ public class MemberController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<MemberDTO>> getAllMembers() {
-        List<MemberDTO> members = memberService.getAllMembers();
+    public ResponseEntity<List<MemberDTOResponse>> getAllMembers() {
+        List<MemberDTOResponse> members = memberService.getAllMembers();
         return new ResponseEntity<>(members, HttpStatus.OK);
+    }
+
+    @GetMapping("/{memberId}")
+    public ResponseEntity<MemberDTOResponse> getMemberById(@PathVariable Long memberId) {
+        MemberDTOResponse member = memberService.getMemberById(memberId);
+        return new ResponseEntity<>(member, HttpStatus.OK);
+    }
+
+    @PutMapping("/{memberId}")
+    public ResponseEntity<String> updateMember(@PathVariable Long memberId, @RequestBody @Valid MemberDTO memberDTO) {
+        Member updatedMember = memberService.updateMember(memberId, memberDTO);
+        return new ResponseEntity<>("The member has been updated.", HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{memberId}")
+    public ResponseEntity<String> deleteMember(@PathVariable Long memberId) {
+        memberService.deleteMember(memberId);
+        return new ResponseEntity<>("The Member has been deleted.", HttpStatus.NO_CONTENT);
     }
 }
