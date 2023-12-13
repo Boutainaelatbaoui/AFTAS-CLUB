@@ -35,6 +35,30 @@ public class MemberServiceImpl implements IMemberService {
     }
 
     @Override
+    public List<MemberDTO> searchByNum(Integer num) {
+        List<Member> members = memberRepository.searchByNum(num);
+        return members.stream()
+                .map(this::mapEntityToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<MemberDTO> searchByName(String name) {
+        List<Member> members = memberRepository.searchByName(name);
+        return members.stream()
+                .map(this::mapEntityToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<MemberDTO> searchByFamilyName(String familyName) {
+        List<Member> members = memberRepository.searchByFamilyName(familyName);
+        return members.stream()
+                .map(this::mapEntityToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public Member createMember(MemberDTO memberDTO) {
         if (memberRepository.existsByIdentityNumber(memberDTO.getIdentityNumber())){
             throw new ValidationException("The Identity Number is already exists.");

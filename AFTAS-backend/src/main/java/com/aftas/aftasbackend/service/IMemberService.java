@@ -13,6 +13,9 @@ public interface IMemberService {
     List<MemberDTO> getAllMembers();
     void deleteMember(Long memberId);
     Member updateMember(Long memberId, MemberDTO memberDTO);
+    List<MemberDTO> searchByNum(Integer num);
+    List<MemberDTO> searchByName(String name);
+    List<MemberDTO> searchByFamilyName(String familyName);
 
 }
 

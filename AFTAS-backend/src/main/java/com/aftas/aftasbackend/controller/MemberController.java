@@ -41,6 +41,22 @@ public class MemberController {
         return new ResponseEntity<>(member, HttpStatus.OK);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<MemberDTO>> searchMembers(
+            @RequestParam(required = false) Integer num,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String familyName) {
+        if (num != null) {
+            return new ResponseEntity<>(memberService.searchByNum(num), HttpStatus.OK);
+        } else if (name != null) {
+            return new ResponseEntity<>(memberService.searchByName(name), HttpStatus.OK);
+        } else if (familyName != null) {
+            return new ResponseEntity<>(memberService.searchByFamilyName(familyName), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @PutMapping("/{memberId}")
     public ResponseEntity<String> updateMember(@PathVariable Long memberId, @RequestBody @Valid MemberDTO memberDTO) {
         Member updatedMember = memberService.updateMember(memberId, memberDTO);
