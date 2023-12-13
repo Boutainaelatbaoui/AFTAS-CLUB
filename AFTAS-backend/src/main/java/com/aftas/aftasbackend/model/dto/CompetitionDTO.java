@@ -36,6 +36,7 @@ public class CompetitionDTO {
     @Min(value = 3, message = "The number of participants should not be less than 3")
     private Integer limitParticipants;
 
+    @NotNull(message = "number of Participants should not be Empty")
     private Integer numberOfParticipants;
 
     @NotBlank(message = "The location should not be Empty")

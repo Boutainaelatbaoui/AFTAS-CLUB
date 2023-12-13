@@ -76,10 +76,16 @@ public class CompetitionServiceImpl implements ICompetitionService {
             throw new ValidationException("Member is already added to the competition.");
         }
 
+        if (competition.getNumberOfParticipants() >= competition.getLimitParticipants()) {
+            throw new ValidationException("The competition has reached its participant limit.");
+        }
+
         LocalDateTime currentDateTime = LocalDateTime.now();
         LocalDateTime competitionStartDateTime = LocalDateTime.of(competition.getDate(), competition.getStartTime());
 
         if (competitionStartDateTime.isAfter(currentDateTime.plusHours(24))) {
+            competition.setNumberOfParticipants(competition.getNumberOfParticipants() + 1);
+
             Ranking ranking = new Ranking();
             ranking.setCompetition(competition);
             ranking.setMember(member);
@@ -90,6 +96,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
             throw new ValidationException("You can be added to this competition just before 24 hours!!");
         }
     }
+
 
 
     @Override
