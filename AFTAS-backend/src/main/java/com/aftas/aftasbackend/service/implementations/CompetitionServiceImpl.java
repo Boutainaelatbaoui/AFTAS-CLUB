@@ -4,6 +4,7 @@ import com.aftas.aftasbackend.model.dto.CompetitionDTO;
 import com.aftas.aftasbackend.model.entities.Competition;
 import com.aftas.aftasbackend.model.entities.Member;
 import com.aftas.aftasbackend.model.entities.Ranking;
+import com.aftas.aftasbackend.model.entities.embedded.MemberCompetition;
 import com.aftas.aftasbackend.repository.CompetitionRepository;
 import com.aftas.aftasbackend.repository.MemberRepository;
 import com.aftas.aftasbackend.repository.RankingRepository;
@@ -86,9 +87,15 @@ public class CompetitionServiceImpl implements ICompetitionService {
         if (competitionStartDateTime.isAfter(currentDateTime.plusHours(24))) {
             competition.setNumberOfParticipants(competition.getNumberOfParticipants() + 1);
 
+            MemberCompetition memberCompetition = new MemberCompetition();
+            memberCompetition.setCompetitionId(competition.getId());
+            memberCompetition.setMemberId(member.getId());
+
             Ranking ranking = new Ranking();
+            ranking.setId(memberCompetition);
             ranking.setCompetition(competition);
             ranking.setMember(member);
+
             rankingRepository.save(ranking);
 
             return competitionRepository.save(competition);
@@ -96,6 +103,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
             throw new ValidationException("You can be added to this competition just before 24 hours!!");
         }
     }
+
 
 
 

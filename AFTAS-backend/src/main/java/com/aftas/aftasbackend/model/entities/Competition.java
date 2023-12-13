@@ -39,5 +39,5 @@ public class Competition {
     private List<Hunting> huntings;
 
     @OneToMany(mappedBy = "competition")
-    private List<Ranking> rankings;
+    private List<Ranking> members;
 }

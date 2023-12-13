@@ -6937,3 +6937,59 @@ java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" bec
 2023-12-13T21:52:23.014+01:00  INFO 20412 --- [http-nio-8080-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-12-13T21:52:23.016+01:00  INFO 20412 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2023-12-13T21:52:23.019+01:00  INFO 20412 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-13T22:13:08.273+01:00  WARN 20412 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m17s728ms220µs400ns).
+2023-12-13T22:15:46.864+01:00  INFO 20412 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-13T22:15:47.039+01:00  INFO 20412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-13T22:15:47.424+01:00  INFO 20412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-13T22:16:05.178+01:00  INFO 20240 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 20240 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-13T22:16:05.194+01:00  INFO 20240 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-13T22:16:07.279+01:00  INFO 20240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-13T22:16:07.538+01:00  INFO 20240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 240 ms. Found 6 JPA repository interfaces.
+2023-12-13T22:16:08.741+01:00  INFO 20240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-13T22:16:08.773+01:00  INFO 20240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-13T22:16:08.775+01:00  INFO 20240 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-13T22:16:08.948+01:00  INFO 20240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-13T22:16:08.949+01:00  INFO 20240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3591 ms
+2023-12-13T22:16:09.333+01:00  INFO 20240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-13T22:16:09.774+01:00  INFO 20240 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49cd946c
+2023-12-13T22:16:09.778+01:00  INFO 20240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-13T22:16:12.754+01:00  INFO 20240 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-13T22:16:13.057+01:00  WARN 20240 --- [main] liquibase.changelog                      : Due to mariadb SQL limitations, setNullable will lose primary key/autoincrement/not null/comment settings explicitly redefined in the change. Use <sql> or <modifySql> to re-specify all configuration if this is the case
+2023-12-13T22:16:13.081+01:00  WARN 20240 --- [main] liquibase.changelog                      : Due to mariadb SQL limitations, setNullable will lose primary key/autoincrement/not null/comment settings explicitly redefined in the change. Use <sql> or <modifySql> to re-specify all configuration if this is the case
+2023-12-13T22:16:13.157+01:00  INFO 20240 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-13T22:16:13.160+01:00  INFO 20240 --- [main] liquibase.command                        : Using deploymentId: 2502173159
+2023-12-13T22:16:13.165+01:00  INFO 20240 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-13T22:16:13.371+01:00  INFO 20240 --- [main] liquibase.changelog                      : Column ranking.id dropped
+2023-12-13T22:16:13.374+01:00  INFO 20240 --- [main] liquibase.changelog                      : ChangeSet db/changelog/2023/12/13-02-changelog.xml::1702502105615-6::Youcode (generated) ran successfully in 159ms
+2023-12-13T22:16:13.474+01:00  INFO 20240 --- [main] liquibase.changelog                      : NOT NULL constraint has been added to ranking.competition_id
+2023-12-13T22:16:13.475+01:00  INFO 20240 --- [main] liquibase.changelog                      : ChangeSet db/changelog/2023/12/13-02-changelog.xml::1702502105615-1::Youcode (generated) ran successfully in 75ms
+2023-12-13T22:16:13.600+01:00  INFO 20240 --- [main] liquibase.changelog                      : NOT NULL constraint has been added to ranking.member_id
+2023-12-13T22:16:13.605+01:00  INFO 20240 --- [main] liquibase.changelog                      : ChangeSet db/changelog/2023/12/13-02-changelog.xml::1702502105615-2::Youcode (generated) ran successfully in 115ms
+2023-12-13T22:16:13.754+01:00  INFO 20240 --- [main] liquibase.changelog                      : Primary key added to ranking (member_id, competition_id)
+2023-12-13T22:16:13.755+01:00  INFO 20240 --- [main] liquibase.changelog                      : ChangeSet db/changelog/2023/12/13-02-changelog.xml::1702502105615-4::Youcode (generated) ran successfully in 132ms
+2023-12-13T22:16:13.771+01:00  INFO 20240 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-13T22:16:13.772+01:00  INFO 20240 --- [main] liquibase.util                           : Run:                          4
+2023-12-13T22:16:13.772+01:00  INFO 20240 --- [main] liquibase.util                           : Previously run:              12
+2023-12-13T22:16:13.772+01:00  INFO 20240 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-13T22:16:13.773+01:00  INFO 20240 --- [main] liquibase.util                           : -------------------------------
+2023-12-13T22:16:13.773+01:00  INFO 20240 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-13T22:16:13.774+01:00  INFO 20240 --- [main] liquibase.util                           : Update summary generated
+2023-12-13T22:16:13.778+01:00  INFO 20240 --- [main] liquibase.command                        : Update command completed successfully.
+2023-12-13T22:16:13.787+01:00  INFO 20240 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-13T22:16:13.788+01:00  INFO 20240 --- [main] liquibase.command                        : Command execution complete
+2023-12-13T22:16:14.058+01:00  INFO 20240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-13T22:16:14.242+01:00  INFO 20240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-13T22:16:14.374+01:00  INFO 20240 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-13T22:16:15.147+01:00  INFO 20240 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-13T22:16:15.310+01:00  WARN 20240 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-13T22:16:16.226+01:00  WARN 20240 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-13T22:16:16.227+01:00  WARN 20240 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-13T22:16:18.144+01:00  INFO 20240 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-13T22:16:18.154+01:00  INFO 20240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-13T22:16:19.086+01:00  INFO 20240 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-13T22:16:20.214+01:00  WARN 20240 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-13T22:16:21.171+01:00  INFO 20240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-13T22:16:21.189+01:00  INFO 20240 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 17.583 seconds (process running for 20.597)
+2023-12-13T22:20:02.439+01:00  INFO 20240 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-13T22:20:02.444+01:00  INFO 20240 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-13T22:20:02.466+01:00  INFO 20240 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
