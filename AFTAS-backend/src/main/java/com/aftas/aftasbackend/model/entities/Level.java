@@ -23,5 +23,6 @@ public class Level {
     private Integer points;
 
     @OneToMany(mappedBy = "level")
+    @JsonIgnore
     private List<Fish> fishes;
 }

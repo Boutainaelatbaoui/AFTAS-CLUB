@@ -29,3 +29,34 @@
 2023-12-13T12:11:51.579+01:00  INFO 18524 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-12-13T12:11:51.583+01:00  INFO 18524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-12-13T12:11:51.591+01:00  INFO 18524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-13T18:00:58.185+01:00  INFO 3492 --- [main] c.a.a.AftasClubBackendApplicationTests   : Starting AftasClubBackendApplicationTests using Java 17.0.9 with PID 3492 (started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend)
+2023-12-13T18:00:58.189+01:00  INFO 3492 --- [main] c.a.a.AftasClubBackendApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2023-12-13T18:01:00.227+01:00  INFO 3492 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-13T18:01:00.489+01:00  INFO 3492 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 235 ms. Found 6 JPA repository interfaces.
+2023-12-13T18:01:01.642+01:00  INFO 3492 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-13T18:01:02.211+01:00  INFO 3492 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@796d33eb
+2023-12-13T18:01:02.219+01:00  INFO 3492 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-13T18:01:04.714+01:00  INFO 3492 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-13T18:01:04.914+01:00  INFO 3492 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-13T18:01:04.940+01:00  INFO 3492 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-13T18:01:04.941+01:00  INFO 3492 --- [main] liquibase.util                           : Run:                          0
+2023-12-13T18:01:04.941+01:00  INFO 3492 --- [main] liquibase.util                           : Previously run:              12
+2023-12-13T18:01:04.942+01:00  INFO 3492 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-13T18:01:04.942+01:00  INFO 3492 --- [main] liquibase.util                           : -------------------------------
+2023-12-13T18:01:04.942+01:00  INFO 3492 --- [main] liquibase.util                           : Total change sets:           12
+2023-12-13T18:01:04.943+01:00  INFO 3492 --- [main] liquibase.util                           : Update summary generated
+2023-12-13T18:01:04.992+01:00  INFO 3492 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-13T18:01:04.995+01:00  INFO 3492 --- [main] liquibase.command                        : Command execution complete
+2023-12-13T18:01:05.165+01:00  INFO 3492 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-13T18:01:05.363+01:00  INFO 3492 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-13T18:01:05.483+01:00  INFO 3492 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-13T18:01:06.049+01:00  INFO 3492 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-13T18:01:06.189+01:00  WARN 3492 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-13T18:01:08.236+01:00  INFO 3492 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-13T18:01:08.243+01:00  INFO 3492 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-13T18:01:09.051+01:00  INFO 3492 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-13T18:01:10.203+01:00  WARN 3492 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-13T18:01:10.971+01:00  INFO 3492 --- [main] c.a.a.AftasClubBackendApplicationTests   : Started AftasClubBackendApplicationTests in 13.785 seconds (process running for 16.72)
+2023-12-13T18:01:12.023+01:00  INFO 3492 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-13T18:01:12.028+01:00  INFO 3492 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-13T18:01:12.047+01:00  INFO 3492 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
