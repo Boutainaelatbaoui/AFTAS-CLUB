@@ -94,6 +94,12 @@ public class MemberServiceImpl implements IMemberService {
     public Member updateMember(Long memberId, MemberDTO memberDTO) {
         Member existingMember = getMemberById(memberId);
 
+        if (!existingMember.getIdentityNumber().equals(memberDTO.getIdentityNumber())) {
+            if (memberRepository.existsByIdentityNumber(memberDTO.getIdentityNumber())) {
+                throw new ValidationException("The Identity Number is already exists.");
+            }
+        }
+
         existingMember.setName(memberDTO.getName());
         existingMember.setFamilyName(memberDTO.getFamilyName());
         existingMember.setAccessionDate(memberDTO.getAccessionDate());
@@ -103,6 +109,7 @@ public class MemberServiceImpl implements IMemberService {
 
         return memberRepository.save(existingMember);
     }
+
 
     public Member mapDTOToEntity(MemberDTO memberDTO) {
         return Member.builder()
