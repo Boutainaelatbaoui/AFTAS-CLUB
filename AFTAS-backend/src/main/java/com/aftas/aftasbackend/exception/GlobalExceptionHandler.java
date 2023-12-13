@@ -2,6 +2,7 @@ package com.aftas.aftasbackend.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ValidationException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -31,6 +32,13 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
     }
 
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<ErrorResponse> handleDataIntegrityViolationException(DataIntegrityViolationException e) {
+        ErrorResponse errorResponse = new ErrorResponse("Data integrity violation", "Duplicate entry or constraint violation");
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException e) {
@@ -38,11 +46,18 @@ public class GlobalExceptionHandler {
         List<FieldError> fieldErrors = bindingResult.getFieldErrors();
 
         List<String> errorMessages = fieldErrors.stream()
-                .map(FieldError::getDefaultMessage)
+                .map(this::resolveErrorMessage)
                 .collect(Collectors.toList());
 
         ErrorResponse errorResponse = new ErrorResponse("Validation error", String.join(", ", errorMessages));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    private String resolveErrorMessage(FieldError fieldError) {
+        if (fieldError.getField().equals("identityDocument")) {
+            return "Invalid Identity Document Type";
+        }
+        return fieldError.getDefaultMessage();
     }
 
     @ExceptionHandler(Exception.class)
@@ -51,4 +66,6 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse("Internal server error", "An unexpected error occurred");
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
     }
+
+
 }
