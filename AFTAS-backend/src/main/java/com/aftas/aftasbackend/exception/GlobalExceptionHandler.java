@@ -32,12 +32,12 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
     }
 
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public ResponseEntity<ErrorResponse> handleDataIntegrityViolationException(DataIntegrityViolationException e) {
-        ErrorResponse errorResponse = new ErrorResponse("Data integrity violation", "Duplicate entry or constraint violation");
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
-    }
+//    @ExceptionHandler(DataIntegrityViolationException.class)
+//    @ResponseStatus(HttpStatus.CONFLICT)
+//    public ResponseEntity<ErrorResponse> handleDataIntegrityViolationException(DataIntegrityViolationException e) {
+//        ErrorResponse errorResponse = new ErrorResponse("Data integrity violation", "Duplicate entry or constraint violation");
+//        return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
+//    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -46,18 +46,11 @@ public class GlobalExceptionHandler {
         List<FieldError> fieldErrors = bindingResult.getFieldErrors();
 
         List<String> errorMessages = fieldErrors.stream()
-                .map(this::resolveErrorMessage)
+                .map(FieldError::getDefaultMessage)
                 .collect(Collectors.toList());
 
         ErrorResponse errorResponse = new ErrorResponse("Validation error", String.join(", ", errorMessages));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
-    }
-
-    private String resolveErrorMessage(FieldError fieldError) {
-        if (fieldError.getField().equals("identityDocument")) {
-            return "Invalid Identity Document Type";
-        }
-        return fieldError.getDefaultMessage();
     }
 
     @ExceptionHandler(Exception.class)

@@ -122,6 +122,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
         existingCompetition.setStartTime(competitionDTO.getStartTime());
         existingCompetition.setEndTime(competitionDTO.getEndTime());
         existingCompetition.setNumberOfParticipants(competitionDTO.getNumberOfParticipants());
+        existingCompetition.setLimitParticipants(competitionDTO.getLimitParticipants());
         existingCompetition.setLocation(competitionDTO.getLocation());
         existingCompetition.setAmount(competitionDTO.getAmount());
 

@@ -1,7 +1,6 @@
 package com.aftas.aftasbackend.controller;
 
 import com.aftas.aftasbackend.model.dto.MemberDTO;
-import com.aftas.aftasbackend.model.dto.Response.MemberDTOResponse;
 import com.aftas.aftasbackend.model.entities.Member;
 import com.aftas.aftasbackend.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,14 +30,14 @@ public class MemberController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<MemberDTOResponse>> getAllMembers() {
-        List<MemberDTOResponse> members = memberService.getAllMembers();
+    public ResponseEntity<List<MemberDTO>> getAllMembers() {
+        List<MemberDTO> members = memberService.getAllMembers();
         return new ResponseEntity<>(members, HttpStatus.OK);
     }
 
     @GetMapping("/{memberId}")
-    public ResponseEntity<MemberDTOResponse> getMemberById(@PathVariable Long memberId) {
-        MemberDTOResponse member = memberService.getMemberById(memberId);
+    public ResponseEntity<Member> getMemberById(@PathVariable Long memberId) {
+        Member member = memberService.getMemberById(memberId);
         return new ResponseEntity<>(member, HttpStatus.OK);
     }
 
