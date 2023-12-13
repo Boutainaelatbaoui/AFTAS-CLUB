@@ -106,6 +106,7 @@ public class MemberServiceImpl implements IMemberService {
         existingMember.setNationality(memberDTO.getNationality());
         existingMember.setIdentityDocument(memberDTO.getIdentityDocument());
         existingMember.setIdentityNumber(memberDTO.getIdentityNumber());
+        existingMember.setNum(existingMember.getNum());
 
         return memberRepository.save(existingMember);
     }
