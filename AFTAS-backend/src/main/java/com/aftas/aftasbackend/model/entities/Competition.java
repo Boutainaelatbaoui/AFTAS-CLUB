@@ -1,5 +1,6 @@
 package com.aftas.aftasbackend.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,8 +37,10 @@ public class Competition {
     private Integer limitParticipants;
 
     @OneToMany(mappedBy = "competition")
+    @JsonIgnore
     private List<Hunting> huntings;
 
     @OneToMany(mappedBy = "competition")
+    @JsonIgnore
     private List<Ranking> members;
 }

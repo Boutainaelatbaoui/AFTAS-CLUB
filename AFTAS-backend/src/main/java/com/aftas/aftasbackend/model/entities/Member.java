@@ -1,6 +1,7 @@
 package com.aftas.aftasbackend.model.entities;
 
 import com.aftas.aftasbackend.enums.IdentityDocumentType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,8 +35,10 @@ public class Member {
     private String identityNumber;
 
     @OneToMany(mappedBy = "member")
+    @JsonIgnore
     private List<Hunting> huntings;
 
     @OneToMany(mappedBy = "member")
+    @JsonIgnore
     private List<Ranking> competitions;
 }
