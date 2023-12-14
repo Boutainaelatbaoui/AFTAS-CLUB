@@ -1,14 +1,9 @@
 package com.aftas.aftasbackend.service.implementations;
 
 import com.aftas.aftasbackend.model.dto.HuntingDTO;
-import com.aftas.aftasbackend.model.entities.Competition;
-import com.aftas.aftasbackend.model.entities.Fish;
-import com.aftas.aftasbackend.model.entities.Hunting;
-import com.aftas.aftasbackend.model.entities.Member;
-import com.aftas.aftasbackend.repository.CompetitionRepository;
-import com.aftas.aftasbackend.repository.FishRepository;
-import com.aftas.aftasbackend.repository.HuntingRepository;
-import com.aftas.aftasbackend.repository.MemberRepository;
+import com.aftas.aftasbackend.model.entities.*;
+import com.aftas.aftasbackend.model.entities.embedded.MemberCompetition;
+import com.aftas.aftasbackend.repository.*;
 import com.aftas.aftasbackend.service.IHuntingService;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,21 +21,22 @@ public class HuntingServiceImpl implements IHuntingService {
     private final FishRepository fishRepository;
     private final CompetitionRepository competitionRepository;
     private final MemberRepository memberRepository;
+    private final RankingRepository rankingRepository;
 
     @Autowired
     public HuntingServiceImpl(HuntingRepository huntingRepository, FishRepository fishRepository,
-                              CompetitionRepository competitionRepository, MemberRepository memberRepository) {
+                              CompetitionRepository competitionRepository, MemberRepository memberRepository, RankingRepository rankingRepository) {
         this.huntingRepository = huntingRepository;
         this.fishRepository = fishRepository;
         this.competitionRepository = competitionRepository;
         this.memberRepository = memberRepository;
+        this.rankingRepository = rankingRepository;
     }
 
     @Override
     public Hunting createHunting(HuntingDTO huntingDTO) {
-        if (!memberRepository.existsById(huntingDTO.getMemberId())) {
-            throw new ValidationException("Invalid member ID");
-        }
+        Member member = memberRepository.findById(huntingDTO.getMemberId())
+                .orElseThrow(() -> new ValidationException("Member not found with ID: " + huntingDTO.getMemberId()));
 
         Fish fish = fishRepository.findById(huntingDTO.getFishId())
                 .orElseThrow(() -> new ValidationException("Fish not found with ID: " + huntingDTO.getFishId()));
@@ -59,18 +56,25 @@ public class HuntingServiceImpl implements IHuntingService {
             throw new ValidationException("Hunt can only be created after the competition starts and up to 5 hours after it ends");
         }
 
-        Hunting existingHunting = huntingRepository.findByFishAndCompetitionAndMember(
-                huntingDTO.getFishId(), huntingDTO.getCompetitionId(), huntingDTO.getMemberId());
+        Optional<Ranking> rankingOptional = rankingRepository.findByCompetitionAndMember(competition, member);
 
-        if (existingHunting != null) {
-            existingHunting.setNumberOfFish(existingHunting.getNumberOfFish() + 1);
-            return huntingRepository.save(existingHunting);
+        if (rankingOptional.isPresent()) {
+            Hunting existingHunting = huntingRepository.findByFishAndCompetitionAndMember(
+                    huntingDTO.getFishId(), huntingDTO.getCompetitionId(), huntingDTO.getMemberId());
+
+            if (existingHunting != null) {
+                existingHunting.setNumberOfFish(existingHunting.getNumberOfFish() + 1);
+                return huntingRepository.save(existingHunting);
+            } else {
+                Hunting newHunting = mapDtoToEntity(huntingDTO);
+                newHunting.setNumberOfFish(1);
+                return huntingRepository.save(newHunting);
+            }
         } else {
-            Hunting newHunting = mapDtoToEntity(huntingDTO);
-            newHunting.setNumberOfFish(1);
-            return huntingRepository.save(newHunting);
+            throw new ValidationException("Member is not part of the competition");
         }
     }
+
 
 
 
