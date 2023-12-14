@@ -51,8 +51,12 @@ public class HuntingServiceImpl implements IHuntingService {
             throw new ValidationException("Entered weight should be greater than or equal to the average weight of the fish");
         }
 
-        if (!LocalDateTime.now().toLocalDate().isEqual(competition.getDate())) {
-            throw new ValidationException("Hunt can only be created on the same date as the competition");
+        LocalDateTime currentDate = LocalDateTime.now();
+        LocalDateTime competitionStartDateTime = LocalDateTime.of(competition.getDate(), competition.getStartTime());
+        LocalDateTime competitionEndDateTime = LocalDateTime.of(competition.getDate(), competition.getEndTime()).plusHours(5);
+
+        if (currentDate.isBefore(competitionStartDateTime) || currentDate.isAfter(competitionEndDateTime)) {
+            throw new ValidationException("Hunt can only be created after the competition starts and up to 5 hours after it ends");
         }
 
         Hunting existingHunting = huntingRepository.findByFishAndCompetitionAndMember(
@@ -67,6 +71,8 @@ public class HuntingServiceImpl implements IHuntingService {
             return huntingRepository.save(newHunting);
         }
     }
+
+
 
 
     public List<HuntingDTO> getAllHuntings() {

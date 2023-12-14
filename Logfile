@@ -5400,3 +5400,131 @@ java.lang.NullPointerException: Cannot invoke "com.aftas.aftasbackend.model.enti
 2023-12-14T19:56:14.320+01:00  INFO 2952 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-12-14T19:56:14.322+01:00  INFO 2952 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2023-12-14T19:56:14.324+01:00  INFO 2952 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-14T19:56:27.424+01:00  WARN 2952 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2023-12-14T20:41:56.478+01:00  INFO 2952 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T20:41:56.548+01:00  INFO 2952 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T20:41:56.578+01:00  INFO 2952 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T20:42:03.129+01:00  INFO 20812 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 20812 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T20:42:03.131+01:00  INFO 20812 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T20:42:03.816+01:00  INFO 20812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T20:42:03.913+01:00  INFO 20812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 6 JPA repository interfaces.
+2023-12-14T20:42:04.420+01:00  INFO 20812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T20:42:04.431+01:00  INFO 20812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T20:42:04.431+01:00  INFO 20812 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T20:42:04.496+01:00  INFO 20812 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T20:42:04.497+01:00  INFO 20812 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1331 ms
+2023-12-14T20:42:04.702+01:00  INFO 20812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T20:42:04.885+01:00  INFO 20812 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49c099b
+2023-12-14T20:42:04.887+01:00  INFO 20812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T20:42:05.988+01:00  INFO 20812 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T20:42:06.064+01:00  INFO 20812 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T20:42:06.072+01:00  INFO 20812 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T20:42:06.073+01:00  INFO 20812 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T20:42:06.073+01:00  INFO 20812 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T20:42:06.073+01:00  INFO 20812 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T20:42:06.073+01:00  INFO 20812 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T20:42:06.073+01:00  INFO 20812 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T20:42:06.073+01:00  INFO 20812 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T20:42:06.091+01:00  INFO 20812 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T20:42:06.092+01:00  INFO 20812 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T20:42:06.185+01:00  INFO 20812 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T20:42:06.305+01:00  INFO 20812 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T20:42:06.353+01:00  INFO 20812 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T20:42:06.584+01:00  INFO 20812 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T20:42:06.665+01:00  WARN 20812 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T20:42:07.025+01:00  WARN 20812 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T20:42:07.025+01:00  WARN 20812 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T20:42:07.673+01:00  INFO 20812 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T20:42:07.676+01:00  INFO 20812 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T20:42:08.061+01:00  INFO 20812 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T20:42:08.545+01:00  WARN 20812 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T20:42:08.959+01:00  INFO 20812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T20:42:08.965+01:00  INFO 20812 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 6.395 seconds (process running for 7.059)
+2023-12-14T20:45:06.179+01:00  INFO 20812 --- [http-nio-8080-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T20:45:06.180+01:00  INFO 20812 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T20:45:06.183+01:00  INFO 20812 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-14T20:52:41.005+01:00  INFO 20812 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T20:52:41.061+01:00  INFO 20812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T20:52:41.112+01:00  INFO 20812 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T20:52:47.700+01:00  INFO 19580 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 19580 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T20:52:47.703+01:00  INFO 19580 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T20:52:48.456+01:00  INFO 19580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T20:52:48.583+01:00  INFO 19580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 6 JPA repository interfaces.
+2023-12-14T20:52:49.134+01:00  INFO 19580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T20:52:49.145+01:00  INFO 19580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T20:52:49.145+01:00  INFO 19580 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T20:52:49.202+01:00  INFO 19580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T20:52:49.202+01:00  INFO 19580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1454 ms
+2023-12-14T20:52:49.327+01:00  INFO 19580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T20:52:49.503+01:00  INFO 19580 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a950a3b
+2023-12-14T20:52:49.506+01:00  INFO 19580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T20:52:50.704+01:00  INFO 19580 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T20:52:50.796+01:00  INFO 19580 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T20:52:50.805+01:00  INFO 19580 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T20:52:50.805+01:00  INFO 19580 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T20:52:50.805+01:00  INFO 19580 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T20:52:50.805+01:00  INFO 19580 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T20:52:50.806+01:00  INFO 19580 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T20:52:50.806+01:00  INFO 19580 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T20:52:50.806+01:00  INFO 19580 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T20:52:50.823+01:00  INFO 19580 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T20:52:50.824+01:00  INFO 19580 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T20:52:50.907+01:00  INFO 19580 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T20:52:51.015+01:00  INFO 19580 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T20:52:51.069+01:00  INFO 19580 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T20:52:51.388+01:00  INFO 19580 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T20:52:51.470+01:00  WARN 19580 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T20:52:51.911+01:00  WARN 19580 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T20:52:51.912+01:00  WARN 19580 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T20:52:52.731+01:00  INFO 19580 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T20:52:52.735+01:00  INFO 19580 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T20:52:53.134+01:00  INFO 19580 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T20:52:53.650+01:00  WARN 19580 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T20:52:54.093+01:00  INFO 19580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T20:52:54.101+01:00  INFO 19580 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 6.842 seconds (process running for 7.657)
+2023-12-14T20:52:59.525+01:00  INFO 19580 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T20:52:59.526+01:00  INFO 19580 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T20:52:59.527+01:00  INFO 19580 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-14T21:17:11.366+01:00  WARN 19580 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m4s699ms348µs100ns).
+2023-12-14T21:17:11.948+01:00  INFO 19580 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T21:17:12.059+01:00  INFO 19580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T21:17:12.232+01:00  INFO 19580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T21:17:24.390+01:00  INFO 18120 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 18120 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T21:17:24.394+01:00  INFO 18120 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T21:17:25.658+01:00  INFO 18120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T21:17:25.780+01:00  INFO 18120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2023-12-14T21:17:26.983+01:00  INFO 18120 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T21:17:27.026+01:00  INFO 18120 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T21:17:27.027+01:00  INFO 18120 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T21:17:27.113+01:00  INFO 18120 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T21:17:27.113+01:00  INFO 18120 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2669 ms
+2023-12-14T21:17:27.345+01:00  INFO 18120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T21:17:27.682+01:00  INFO 18120 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ed5b321
+2023-12-14T21:17:27.690+01:00  INFO 18120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T21:17:29.104+01:00  INFO 18120 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T21:17:29.192+01:00  INFO 18120 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T21:17:29.204+01:00  INFO 18120 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T21:17:29.204+01:00  INFO 18120 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T21:17:29.204+01:00  INFO 18120 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T21:17:29.204+01:00  INFO 18120 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T21:17:29.204+01:00  INFO 18120 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T21:17:29.204+01:00  INFO 18120 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T21:17:29.204+01:00  INFO 18120 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T21:17:29.222+01:00  INFO 18120 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T21:17:29.223+01:00  INFO 18120 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T21:17:29.298+01:00  INFO 18120 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T21:17:29.386+01:00  INFO 18120 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T21:17:29.434+01:00  INFO 18120 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T21:17:29.692+01:00  INFO 18120 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T21:17:29.767+01:00  WARN 18120 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T21:17:30.154+01:00  WARN 18120 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T21:17:30.154+01:00  WARN 18120 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T21:17:30.784+01:00  INFO 18120 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T21:17:30.787+01:00  INFO 18120 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T21:17:31.147+01:00  INFO 18120 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T21:17:31.604+01:00  WARN 18120 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T21:17:31.954+01:00  INFO 18120 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T21:17:31.960+01:00  INFO 18120 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 8.282 seconds (process running for 9.517)
+2023-12-14T21:17:47.774+01:00  INFO 18120 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T21:17:47.774+01:00  INFO 18120 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T21:17:47.777+01:00  INFO 18120 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
