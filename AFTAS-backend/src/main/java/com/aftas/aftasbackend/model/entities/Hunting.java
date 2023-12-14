@@ -18,6 +18,8 @@ public class Hunting {
 
     private Integer numberOfFish;
 
+    private Double weight;
+
     @ManyToOne
     @JoinColumn(name = "fish_id")
     private Fish fish;

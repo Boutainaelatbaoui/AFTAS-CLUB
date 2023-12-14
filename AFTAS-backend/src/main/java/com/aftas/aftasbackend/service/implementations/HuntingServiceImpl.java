@@ -33,11 +33,19 @@ public class HuntingServiceImpl implements IHuntingService {
         this.memberRepository = memberRepository;
     }
 
+    @Override
     public Hunting createHunting(HuntingDTO huntingDTO) {
         if (!competitionRepository.existsById(huntingDTO.getCompetitionId()) ||
                 !fishRepository.existsById(huntingDTO.getFishId()) ||
                 !memberRepository.existsById(huntingDTO.getMemberId())) {
             throw new ValidationException("Invalid competition, fish, or member ID");
+        }
+
+        Fish fish = fishRepository.findById(huntingDTO.getFishId())
+                .orElseThrow(() -> new ValidationException("Fish not found with ID: " + huntingDTO.getFishId()));
+
+        if (huntingDTO.getWeight() == null || huntingDTO.getWeight() < fish.getAverageWeight()) {
+            throw new ValidationException("Entered weight should be greater than or equal to the average weight of the fish");
         }
 
         Hunting existingHunting = huntingRepository.findByFishAndCompetitionAndMember(
@@ -52,6 +60,7 @@ public class HuntingServiceImpl implements IHuntingService {
             return huntingRepository.save(newHunting);
         }
     }
+
 
     public List<HuntingDTO> getAllHuntings() {
         List<Hunting> huntings = huntingRepository.findAll();
@@ -72,6 +81,7 @@ public class HuntingServiceImpl implements IHuntingService {
                 .fish(fishRepository.getById(huntingDTO.getFishId()))
                 .competition(competitionRepository.getById(huntingDTO.getCompetitionId()))
                 .member(memberRepository.getById(huntingDTO.getMemberId()))
+                .weight(huntingDTO.getWeight())
                 .build();
     }
 
@@ -85,6 +95,7 @@ public class HuntingServiceImpl implements IHuntingService {
                 .memberId(hunting.getMember().getId())
                 .fishId(hunting.getFish().getId())
                 .competitionId(hunting.getCompetition().getId())
+                .weight(hunting.getWeight())
                 .build();
     }
 }

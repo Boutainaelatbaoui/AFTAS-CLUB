@@ -3,6 +3,7 @@ package com.aftas.aftasbackend.model.dto;
 import com.aftas.aftasbackend.model.entities.Competition;
 import com.aftas.aftasbackend.model.entities.Fish;
 import com.aftas.aftasbackend.model.entities.Member;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import jakarta.validation.constraints.*;
@@ -22,6 +23,10 @@ public class HuntingDTO {
     @NotNull(message = "Competition ID cannot be null")
     @Positive(message = "Competition ID should be a positive value")
     private Long competitionId;
+
+    @NotNull(message = "Weight cannot be null")
+    @Positive(message = "Weight should be a positive value")
+    private Double weight;
 
     @NotNull(message = "Member ID cannot be null")
     @Positive(message = "Member ID should be a positive value")

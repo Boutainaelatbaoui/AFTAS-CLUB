@@ -4085,3 +4085,1186 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2023-12-14T14:11:32.495+01:00  INFO 21352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-12-14T14:11:32.508+01:00  INFO 21352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-12-14T14:11:32.524+01:00  INFO 21352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:11:37.599+01:00  INFO 20156 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 20156 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:11:37.601+01:00  INFO 20156 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:11:38.259+01:00  INFO 20156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:11:38.323+01:00  INFO 20156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:11:38.758+01:00  INFO 20156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:11:38.767+01:00  INFO 20156 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:11:38.767+01:00  INFO 20156 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:11:38.822+01:00  INFO 20156 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:11:38.822+01:00  INFO 20156 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1164 ms
+2023-12-14T14:11:38.931+01:00  INFO 20156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:11:39.076+01:00  INFO 20156 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f025000
+2023-12-14T14:11:39.077+01:00  INFO 20156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:11:39.924+01:00  INFO 20156 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:11:39.978+01:00  INFO 20156 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:11:39.985+01:00  INFO 20156 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:11:39.985+01:00  INFO 20156 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:11:39.985+01:00  INFO 20156 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:11:39.985+01:00  INFO 20156 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:11:39.985+01:00  INFO 20156 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:11:39.985+01:00  INFO 20156 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-14T14:11:39.985+01:00  INFO 20156 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:11:40.000+01:00  INFO 20156 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:11:40.000+01:00  INFO 20156 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:11:40.058+01:00  INFO 20156 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:11:40.120+01:00  INFO 20156 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:11:40.161+01:00  INFO 20156 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:11:40.384+01:00  INFO 20156 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:11:40.445+01:00  WARN 20156 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:11:40.720+01:00  WARN 20156 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:11:40.720+01:00  WARN 20156 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:11:41.298+01:00  INFO 20156 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:11:41.300+01:00  INFO 20156 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:11:41.617+01:00  INFO 20156 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:11:42.013+01:00  WARN 20156 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:11:42.361+01:00  INFO 20156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:11:42.368+01:00  INFO 20156 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 5.155 seconds (process running for 5.805)
+2023-12-14T14:11:47.485+01:00  INFO 20156 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:11:47.486+01:00  INFO 20156 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:11:47.487+01:00  INFO 20156 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-14T14:24:37.529+01:00  INFO 20156 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:24:37.569+01:00  INFO 20156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:24:37.606+01:00  INFO 20156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:24:43.699+01:00  INFO 23480 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 23480 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:24:43.702+01:00  INFO 23480 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:24:44.300+01:00  INFO 23480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:24:44.380+01:00  INFO 23480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:24:44.819+01:00  INFO 23480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:24:44.828+01:00  INFO 23480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:24:44.829+01:00  INFO 23480 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:24:44.887+01:00  INFO 23480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:24:44.887+01:00  INFO 23480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1141 ms
+2023-12-14T14:24:45.011+01:00  INFO 23480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:24:45.180+01:00  INFO 23480 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d9f0a5
+2023-12-14T14:24:45.182+01:00  INFO 23480 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:24:46.054+01:00  INFO 23480 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:24:46.126+01:00  INFO 23480 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:24:46.135+01:00  INFO 23480 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:24:46.136+01:00  INFO 23480 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:24:46.136+01:00  INFO 23480 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:24:46.136+01:00  INFO 23480 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:24:46.137+01:00  INFO 23480 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:24:46.137+01:00  INFO 23480 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-14T14:24:46.137+01:00  INFO 23480 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:24:46.153+01:00  INFO 23480 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:24:46.153+01:00  INFO 23480 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:24:46.219+01:00  INFO 23480 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:24:46.284+01:00  INFO 23480 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:24:46.354+01:00  INFO 23480 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:24:46.584+01:00  INFO 23480 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:24:46.635+01:00  WARN 23480 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:24:46.944+01:00  WARN 23480 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:24:46.944+01:00  WARN 23480 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:24:47.574+01:00  INFO 23480 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:24:47.577+01:00  INFO 23480 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:24:47.870+01:00  INFO 23480 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:24:48.270+01:00  WARN 23480 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:24:48.577+01:00  INFO 23480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:24:48.584+01:00  INFO 23480 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 5.296 seconds (process running for 5.942)
+2023-12-14T14:26:15.470+01:00  INFO 23480 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:26:15.472+01:00  INFO 23480 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:26:15.480+01:00  INFO 23480 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:26:17.522+01:00  INFO 16244 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 16244 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:26:17.524+01:00  INFO 16244 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:26:18.092+01:00  INFO 16244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:26:18.163+01:00  INFO 16244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:26:18.529+01:00  INFO 16244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:26:18.537+01:00  INFO 16244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:26:18.538+01:00  INFO 16244 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:26:18.588+01:00  INFO 16244 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:26:18.588+01:00  INFO 16244 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1034 ms
+2023-12-14T14:26:18.698+01:00  INFO 16244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:26:18.842+01:00  INFO 16244 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@739e8b96
+2023-12-14T14:26:18.844+01:00  INFO 16244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:26:19.688+01:00  INFO 16244 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:26:19.743+01:00  INFO 16244 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:26:19.751+01:00  INFO 16244 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:26:19.751+01:00  INFO 16244 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:26:19.751+01:00  INFO 16244 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:26:19.751+01:00  INFO 16244 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:26:19.751+01:00  INFO 16244 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:26:19.751+01:00  INFO 16244 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-14T14:26:19.751+01:00  INFO 16244 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:26:19.764+01:00  INFO 16244 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:26:19.764+01:00  INFO 16244 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:26:19.823+01:00  INFO 16244 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:26:19.877+01:00  INFO 16244 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:26:19.918+01:00  INFO 16244 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:26:20.153+01:00  INFO 16244 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:26:20.200+01:00  WARN 16244 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:26:20.487+01:00  WARN 16244 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:26:20.487+01:00  WARN 16244 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:26:20.993+01:00  INFO 16244 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:26:20.995+01:00  INFO 16244 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:26:21.261+01:00  INFO 16244 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:26:21.599+01:00  WARN 16244 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:26:21.848+01:00  INFO 16244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:26:21.854+01:00  INFO 16244 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 4.696 seconds (process running for 5.249)
+2023-12-14T14:28:35.219+01:00  INFO 16244 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:28:35.226+01:00  INFO 16244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:28:35.241+01:00  INFO 16244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:28:45.738+01:00  INFO 18120 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 18120 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:28:45.740+01:00  INFO 18120 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:28:46.447+01:00  INFO 18120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:28:46.555+01:00  INFO 18120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:28:47.069+01:00  INFO 18120 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:28:47.079+01:00  INFO 18120 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:28:47.079+01:00  INFO 18120 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:28:47.137+01:00  INFO 18120 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:28:47.138+01:00  INFO 18120 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1365 ms
+2023-12-14T14:28:47.253+01:00  INFO 18120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:28:47.399+01:00  INFO 18120 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@541bf968
+2023-12-14T14:28:47.401+01:00  INFO 18120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:28:48.435+01:00  INFO 18120 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:28:48.516+01:00  INFO 18120 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:28:48.524+01:00  INFO 18120 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:28:48.524+01:00  INFO 18120 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:28:48.524+01:00  INFO 18120 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:28:48.524+01:00  INFO 18120 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:28:48.524+01:00  INFO 18120 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:28:48.524+01:00  INFO 18120 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-14T14:28:48.524+01:00  INFO 18120 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:28:48.538+01:00  INFO 18120 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:28:48.539+01:00  INFO 18120 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:28:48.605+01:00  INFO 18120 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:28:48.679+01:00  INFO 18120 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:28:48.744+01:00  INFO 18120 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:28:49.101+01:00  INFO 18120 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:28:49.177+01:00  WARN 18120 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:28:49.507+01:00  WARN 18120 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:28:49.508+01:00  WARN 18120 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:28:50.187+01:00  INFO 18120 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:28:50.190+01:00  INFO 18120 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:28:50.611+01:00  INFO 18120 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:28:51.093+01:00  WARN 18120 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:28:51.448+01:00  INFO 18120 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:28:51.457+01:00  INFO 18120 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 6.109 seconds (process running for 6.696)
+2023-12-14T14:29:04.515+01:00  INFO 18120 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:29:04.515+01:00  INFO 18120 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:29:04.517+01:00  INFO 18120 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-12-14T14:29:04.724+01:00 ERROR 18120 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:29:27.468+01:00  INFO 18120 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:29:27.470+01:00  INFO 18120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:29:27.479+01:00  INFO 18120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:29:32.447+01:00  INFO 19332 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 19332 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:29:32.449+01:00  INFO 19332 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:29:33.056+01:00  INFO 19332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:29:33.116+01:00  INFO 19332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:29:33.480+01:00  INFO 19332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:29:33.487+01:00  INFO 19332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:29:33.487+01:00  INFO 19332 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:29:33.539+01:00  INFO 19332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:29:33.539+01:00  INFO 19332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1054 ms
+2023-12-14T14:29:33.638+01:00  INFO 19332 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:29:33.772+01:00  INFO 19332 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f025000
+2023-12-14T14:29:33.773+01:00  INFO 19332 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:29:34.601+01:00  INFO 19332 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:29:34.657+01:00  INFO 19332 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:29:34.663+01:00  INFO 19332 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:29:34.663+01:00  INFO 19332 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:29:34.663+01:00  INFO 19332 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:29:34.663+01:00  INFO 19332 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:29:34.663+01:00  INFO 19332 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:29:34.663+01:00  INFO 19332 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-14T14:29:34.663+01:00  INFO 19332 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:29:34.676+01:00  INFO 19332 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:29:34.678+01:00  INFO 19332 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:29:34.738+01:00  INFO 19332 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:29:34.788+01:00  INFO 19332 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:29:34.824+01:00  INFO 19332 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:29:35.027+01:00  INFO 19332 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:29:35.075+01:00  WARN 19332 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:29:35.388+01:00  WARN 19332 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:29:35.388+01:00  WARN 19332 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:29:35.895+01:00  INFO 19332 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:29:35.897+01:00  INFO 19332 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:29:36.159+01:00  INFO 19332 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:29:36.491+01:00  WARN 19332 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:29:36.738+01:00  INFO 19332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:29:36.744+01:00  INFO 19332 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 4.652 seconds (process running for 5.146)
+2023-12-14T14:29:43.613+01:00  INFO 19332 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:29:43.613+01:00  INFO 19332 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:29:43.615+01:00  INFO 19332 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-14T14:29:43.822+01:00 ERROR 19332 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:30:28.965+01:00  INFO 19332 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:30:28.968+01:00  INFO 19332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:30:28.979+01:00  INFO 19332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:30:34.332+01:00  INFO 9380 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 9380 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:30:34.336+01:00  INFO 9380 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:30:34.932+01:00  INFO 9380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:30:35.004+01:00  INFO 9380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:30:35.417+01:00  INFO 9380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:30:35.429+01:00  INFO 9380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:30:35.430+01:00  INFO 9380 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:30:35.487+01:00  INFO 9380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:30:35.488+01:00  INFO 9380 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1104 ms
+2023-12-14T14:30:35.639+01:00  INFO 9380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:30:35.802+01:00  INFO 9380 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54ffa561
+2023-12-14T14:30:35.804+01:00  INFO 9380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:30:36.806+01:00  INFO 9380 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:30:36.894+01:00  INFO 9380 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:30:36.903+01:00  INFO 9380 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:30:36.903+01:00  INFO 9380 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:30:36.903+01:00  INFO 9380 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:30:36.903+01:00  INFO 9380 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:30:36.903+01:00  INFO 9380 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:30:36.903+01:00  INFO 9380 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-14T14:30:36.903+01:00  INFO 9380 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:30:36.917+01:00  INFO 9380 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:30:36.918+01:00  INFO 9380 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:30:36.977+01:00  INFO 9380 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:30:37.039+01:00  INFO 9380 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:30:37.099+01:00  INFO 9380 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:30:37.303+01:00  INFO 9380 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:30:37.353+01:00  WARN 9380 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:30:37.677+01:00  WARN 9380 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:30:37.677+01:00  WARN 9380 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:30:38.395+01:00  INFO 9380 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:30:38.399+01:00  INFO 9380 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:30:38.724+01:00  INFO 9380 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:30:39.254+01:00  WARN 9380 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:30:39.641+01:00  INFO 9380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:30:39.652+01:00  INFO 9380 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 5.913 seconds (process running for 6.432)
+2023-12-14T14:31:01.427+01:00  INFO 9380 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:31:01.427+01:00  INFO 9380 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:31:01.428+01:00  INFO 9380 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-14T14:31:01.637+01:00 ERROR 9380 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:34:17.741+01:00  INFO 9380 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:34:17.785+01:00  INFO 9380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:34:17.853+01:00  INFO 9380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:34:22.773+01:00  INFO 9976 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 9976 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:34:22.776+01:00  INFO 9976 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:34:23.369+01:00  INFO 9976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:34:23.454+01:00  INFO 9976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:34:23.909+01:00  INFO 9976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:34:23.921+01:00  INFO 9976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:34:23.921+01:00  INFO 9976 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:34:23.977+01:00  INFO 9976 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:34:23.977+01:00  INFO 9976 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1160 ms
+2023-12-14T14:34:24.096+01:00  INFO 9976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:34:24.250+01:00  INFO 9976 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@310a7859
+2023-12-14T14:34:24.252+01:00  INFO 9976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:34:25.239+01:00  INFO 9976 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:34:25.303+01:00  INFO 9976 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:34:25.312+01:00  INFO 9976 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:34:25.313+01:00  INFO 9976 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:34:25.313+01:00  INFO 9976 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:34:25.313+01:00  INFO 9976 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:34:25.313+01:00  INFO 9976 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:34:25.313+01:00  INFO 9976 --- [main] liquibase.util                           : Total change sets:           16
+2023-12-14T14:34:25.313+01:00  INFO 9976 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:34:25.332+01:00  INFO 9976 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:34:25.333+01:00  INFO 9976 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:34:25.400+01:00  INFO 9976 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:34:25.478+01:00  INFO 9976 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:34:25.525+01:00  INFO 9976 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:34:25.768+01:00  INFO 9976 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:34:25.824+01:00  WARN 9976 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:34:26.105+01:00  WARN 9976 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:34:26.105+01:00  WARN 9976 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:34:26.606+01:00  INFO 9976 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:34:26.608+01:00  INFO 9976 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:34:26.876+01:00  INFO 9976 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:34:27.212+01:00  WARN 9976 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:34:27.480+01:00  INFO 9976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:34:27.486+01:00  INFO 9976 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 5.107 seconds (process running for 5.74)
+2023-12-14T14:34:34.211+01:00  INFO 9976 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:34:34.212+01:00  INFO 9976 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:34:34.213+01:00  INFO 9976 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-14T14:34:34.381+01:00 ERROR 9976 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:41:03.644+01:00  INFO 9976 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:41:03.712+01:00  INFO 9976 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:41:03.804+01:00  INFO 9976 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:41:09.249+01:00  INFO 22520 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 22520 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:41:09.252+01:00  INFO 22520 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:41:09.967+01:00  INFO 22520 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:41:10.054+01:00  INFO 22520 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:41:10.473+01:00  INFO 22520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:41:10.482+01:00  INFO 22520 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:41:10.482+01:00  INFO 22520 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:41:10.529+01:00  INFO 22520 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:41:10.529+01:00  INFO 22520 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1239 ms
+2023-12-14T14:41:10.642+01:00  INFO 22520 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:41:10.825+01:00  INFO 22520 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f025000
+2023-12-14T14:41:10.827+01:00  INFO 22520 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:41:11.686+01:00  INFO 22520 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:41:11.788+01:00  INFO 22520 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-14T14:41:11.788+01:00  INFO 22520 --- [main] liquibase.command                        : Using deploymentId: 2561271788
+2023-12-14T14:41:11.790+01:00  INFO 22520 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:41:11.827+01:00  INFO 22520 --- [main] liquibase.changelog                      : Columns weight(DOUBLE) added to huntings
+2023-12-14T14:41:11.828+01:00  INFO 22520 --- [main] liquibase.changelog                      : ChangeSet db/changelog/2023/12/14-01-changelog.xml::1702561253301-1::Youcode (generated) ran successfully in 27ms
+2023-12-14T14:41:11.838+01:00  INFO 22520 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:41:11.838+01:00  INFO 22520 --- [main] liquibase.util                           : Run:                          1
+2023-12-14T14:41:11.838+01:00  INFO 22520 --- [main] liquibase.util                           : Previously run:              16
+2023-12-14T14:41:11.838+01:00  INFO 22520 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:41:11.839+01:00  INFO 22520 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:41:11.839+01:00  INFO 22520 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T14:41:11.839+01:00  INFO 22520 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:41:11.840+01:00  INFO 22520 --- [main] liquibase.command                        : Update command completed successfully.
+2023-12-14T14:41:11.844+01:00  INFO 22520 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:41:11.844+01:00  INFO 22520 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:41:11.927+01:00  INFO 22520 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:41:12.016+01:00  INFO 22520 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:41:12.061+01:00  INFO 22520 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:41:12.331+01:00  INFO 22520 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:41:12.396+01:00  WARN 22520 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:41:12.719+01:00  WARN 22520 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:41:12.719+01:00  WARN 22520 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:41:13.318+01:00  INFO 22520 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:41:13.320+01:00  INFO 22520 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:41:13.626+01:00  INFO 22520 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:41:14.011+01:00  WARN 22520 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:41:14.304+01:00  INFO 22520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:41:14.310+01:00  INFO 22520 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 5.48 seconds (process running for 6.041)
+2023-12-14T14:50:09.239+01:00  INFO 22520 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:50:09.409+01:00  INFO 22520 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:50:09.594+01:00  INFO 22520 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:50:16.944+01:00  INFO 17920 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 17920 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:50:16.947+01:00  INFO 17920 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:50:17.660+01:00  INFO 17920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:50:17.750+01:00  INFO 17920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:50:18.182+01:00  INFO 17920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:50:18.192+01:00  INFO 17920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:50:18.192+01:00  INFO 17920 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:50:18.245+01:00  INFO 17920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:50:18.246+01:00  INFO 17920 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1256 ms
+2023-12-14T14:50:18.375+01:00  INFO 17920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:50:18.558+01:00  INFO 17920 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@541bf968
+2023-12-14T14:50:18.559+01:00  INFO 17920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:50:19.704+01:00  INFO 17920 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:50:19.778+01:00  INFO 17920 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:50:19.787+01:00  INFO 17920 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:50:19.788+01:00  INFO 17920 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:50:19.788+01:00  INFO 17920 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T14:50:19.788+01:00  INFO 17920 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:50:19.788+01:00  INFO 17920 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:50:19.788+01:00  INFO 17920 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T14:50:19.788+01:00  INFO 17920 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:50:19.803+01:00  INFO 17920 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:50:19.803+01:00  INFO 17920 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:50:19.872+01:00  INFO 17920 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:50:19.943+01:00  INFO 17920 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:50:20.005+01:00  INFO 17920 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:50:20.270+01:00  INFO 17920 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:50:20.322+01:00  WARN 17920 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:50:20.661+01:00  WARN 17920 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:50:20.661+01:00  WARN 17920 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:50:21.415+01:00  INFO 17920 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:50:21.418+01:00  INFO 17920 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:50:21.753+01:00  INFO 17920 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:50:22.354+01:00  WARN 17920 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:50:22.706+01:00  INFO 17920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:50:22.714+01:00  INFO 17920 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 6.27 seconds (process running for 6.991)
+2023-12-14T14:50:36.993+01:00  INFO 17920 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:50:36.994+01:00  INFO 17920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:50:36.996+01:00  INFO 17920 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-14T14:50:37.224+01:00 ERROR 17920 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:52:02.525+01:00 ERROR 17920 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:52:44.962+01:00  WARN 17920 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2023-12-14T14:52:51.056+01:00 ERROR 17920 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:54:30.041+01:00  INFO 17920 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:54:30.065+01:00  INFO 17920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:54:30.099+01:00  INFO 17920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:54:37.339+01:00  INFO 21392 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 21392 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:54:37.341+01:00  INFO 21392 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:54:38.073+01:00  INFO 21392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:54:38.162+01:00  INFO 21392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:54:38.712+01:00  INFO 21392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:54:38.724+01:00  INFO 21392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:54:38.724+01:00  INFO 21392 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:54:38.777+01:00  INFO 21392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:54:38.778+01:00  INFO 21392 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1390 ms
+2023-12-14T14:54:38.898+01:00  INFO 21392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:54:39.237+01:00  INFO 21392 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c30cb85
+2023-12-14T14:54:39.240+01:00  INFO 21392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:54:41.322+01:00  INFO 21392 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:54:41.459+01:00  INFO 21392 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:54:41.473+01:00  INFO 21392 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:54:41.473+01:00  INFO 21392 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:54:41.474+01:00  INFO 21392 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T14:54:41.474+01:00  INFO 21392 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:54:41.474+01:00  INFO 21392 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:54:41.475+01:00  INFO 21392 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T14:54:41.475+01:00  INFO 21392 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:54:41.501+01:00  INFO 21392 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:54:41.504+01:00  INFO 21392 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:54:41.661+01:00  INFO 21392 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:54:41.761+01:00  INFO 21392 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:54:41.819+01:00  INFO 21392 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:54:42.353+01:00  INFO 21392 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:54:42.482+01:00  WARN 21392 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:54:43.171+01:00  WARN 21392 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:54:43.172+01:00  WARN 21392 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:54:44.611+01:00  INFO 21392 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:54:44.619+01:00  INFO 21392 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:54:45.421+01:00  INFO 21392 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:54:46.388+01:00  WARN 21392 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:54:47.063+01:00  INFO 21392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:54:47.080+01:00  INFO 21392 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 10.227 seconds (process running for 11.136)
+2023-12-14T14:54:57.194+01:00  INFO 21392 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:54:57.195+01:00  INFO 21392 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:54:57.196+01:00  INFO 21392 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-14T14:54:57.423+01:00 ERROR 21392 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because "enteredWeight" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:44) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:57:23.065+01:00  INFO 21392 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:57:23.082+01:00  INFO 21392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:57:23.117+01:00  INFO 21392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:57:29.699+01:00  INFO 8076 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 8076 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:57:29.702+01:00  INFO 8076 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:57:30.413+01:00  INFO 8076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:57:30.507+01:00  INFO 8076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:57:31.005+01:00  INFO 8076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:57:31.013+01:00  INFO 8076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:57:31.014+01:00  INFO 8076 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:57:31.086+01:00  INFO 8076 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:57:31.086+01:00  INFO 8076 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1346 ms
+2023-12-14T14:57:31.218+01:00  INFO 8076 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:57:31.393+01:00  INFO 8076 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7eeb38b2
+2023-12-14T14:57:31.395+01:00  INFO 8076 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:57:32.532+01:00  INFO 8076 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:57:32.607+01:00  INFO 8076 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:57:32.615+01:00  INFO 8076 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:57:32.615+01:00  INFO 8076 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:57:32.615+01:00  INFO 8076 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T14:57:32.615+01:00  INFO 8076 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:57:32.615+01:00  INFO 8076 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:57:32.615+01:00  INFO 8076 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T14:57:32.615+01:00  INFO 8076 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:57:32.632+01:00  INFO 8076 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:57:32.633+01:00  INFO 8076 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:57:32.705+01:00  INFO 8076 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:57:32.798+01:00  INFO 8076 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:57:32.848+01:00  INFO 8076 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:57:33.068+01:00  INFO 8076 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:57:33.137+01:00  WARN 8076 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:57:33.461+01:00  WARN 8076 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:57:33.462+01:00  WARN 8076 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:57:34.132+01:00  INFO 8076 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:57:34.136+01:00  INFO 8076 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:57:34.433+01:00  INFO 8076 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:57:34.834+01:00  WARN 8076 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:57:35.142+01:00  INFO 8076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:57:35.151+01:00  INFO 8076 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 6.0 seconds (process running for 6.63)
+2023-12-14T14:58:30.908+01:00  INFO 8076 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T14:58:30.909+01:00  INFO 8076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T14:58:30.911+01:00  INFO 8076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-14T14:58:31.431+01:00 ERROR 8076 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "com.aftas.aftasbackend.model.dto.HuntingDTO.getWeight()" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "com.aftas.aftasbackend.model.dto.HuntingDTO.getWeight()" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:43) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T14:59:11.170+01:00  INFO 8076 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:59:11.178+01:00  INFO 8076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T14:59:11.198+01:00  INFO 8076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T14:59:18.214+01:00  INFO 19000 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 19000 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T14:59:18.216+01:00  INFO 19000 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T14:59:18.960+01:00  INFO 19000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T14:59:19.051+01:00  INFO 19000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 6 JPA repository interfaces.
+2023-12-14T14:59:19.561+01:00  INFO 19000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T14:59:19.569+01:00  INFO 19000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T14:59:19.569+01:00  INFO 19000 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T14:59:19.632+01:00  INFO 19000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T14:59:19.633+01:00  INFO 19000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1376 ms
+2023-12-14T14:59:19.754+01:00  INFO 19000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T14:59:19.905+01:00  INFO 19000 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54ffa561
+2023-12-14T14:59:19.907+01:00  INFO 19000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T14:59:21.048+01:00  INFO 19000 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:59:21.128+01:00  INFO 19000 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T14:59:21.138+01:00  INFO 19000 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T14:59:21.138+01:00  INFO 19000 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T14:59:21.138+01:00  INFO 19000 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T14:59:21.138+01:00  INFO 19000 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T14:59:21.138+01:00  INFO 19000 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T14:59:21.138+01:00  INFO 19000 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T14:59:21.139+01:00  INFO 19000 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T14:59:21.155+01:00  INFO 19000 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T14:59:21.156+01:00  INFO 19000 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T14:59:21.233+01:00  INFO 19000 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T14:59:21.328+01:00  INFO 19000 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T14:59:21.383+01:00  INFO 19000 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T14:59:21.630+01:00  INFO 19000 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T14:59:21.703+01:00  WARN 19000 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T14:59:22.036+01:00  WARN 19000 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:59:22.037+01:00  WARN 19000 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T14:59:22.751+01:00  INFO 19000 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T14:59:22.754+01:00  INFO 19000 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T14:59:23.083+01:00  INFO 19000 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T14:59:23.581+01:00  WARN 19000 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T14:59:23.881+01:00  INFO 19000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T14:59:23.889+01:00  INFO 19000 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 6.136 seconds (process running for 6.827)
+2023-12-14T15:06:48.379+01:00  INFO 19000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T15:06:48.389+01:00  INFO 19000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T15:06:48.452+01:00  INFO 19000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 59 ms
+2023-12-14T15:06:58.176+01:00  WARN 19000 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m38s57ms194µs800ns).
+2023-12-14T15:09:46.528+01:00  INFO 19000 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T15:09:46.554+01:00  INFO 19000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T15:09:46.585+01:00  INFO 19000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T15:09:54.449+01:00  INFO 22592 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 22592 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T15:09:54.452+01:00  INFO 22592 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T15:09:55.507+01:00  INFO 22592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T15:09:55.616+01:00  INFO 22592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 6 JPA repository interfaces.
+2023-12-14T15:09:56.181+01:00  INFO 22592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T15:09:56.191+01:00  INFO 22592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T15:09:56.191+01:00  INFO 22592 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T15:09:56.262+01:00  INFO 22592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T15:09:56.263+01:00  INFO 22592 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1753 ms
+2023-12-14T15:09:56.422+01:00  INFO 22592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T15:09:56.599+01:00  INFO 22592 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6acffb2d
+2023-12-14T15:09:56.601+01:00  INFO 22592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T15:09:57.919+01:00  INFO 22592 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T15:09:58.045+01:00  INFO 22592 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T15:09:58.056+01:00  INFO 22592 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T15:09:58.056+01:00  INFO 22592 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T15:09:58.056+01:00  INFO 22592 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T15:09:58.056+01:00  INFO 22592 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T15:09:58.056+01:00  INFO 22592 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T15:09:58.056+01:00  INFO 22592 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T15:09:58.056+01:00  INFO 22592 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T15:09:58.079+01:00  INFO 22592 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T15:09:58.079+01:00  INFO 22592 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T15:09:58.179+01:00  INFO 22592 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T15:09:58.410+01:00  INFO 22592 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T15:09:58.503+01:00  INFO 22592 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T15:09:58.826+01:00  INFO 22592 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T15:09:58.929+01:00  WARN 22592 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T15:09:59.340+01:00  WARN 22592 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T15:09:59.341+01:00  WARN 22592 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T15:10:00.088+01:00  INFO 22592 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T15:10:00.095+01:00  INFO 22592 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T15:10:00.503+01:00  INFO 22592 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T15:10:00.994+01:00  WARN 22592 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T15:10:01.456+01:00  INFO 22592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T15:10:01.463+01:00  INFO 22592 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 7.586 seconds (process running for 8.422)
+2023-12-14T15:13:05.876+01:00  INFO 22592 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T15:13:06.062+01:00  INFO 22592 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T15:13:06.162+01:00  INFO 22592 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T15:13:13.669+01:00  INFO 18896 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 18896 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T15:13:13.673+01:00  INFO 18896 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T15:13:14.672+01:00  INFO 18896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T15:13:14.811+01:00  INFO 18896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 6 JPA repository interfaces.
+2023-12-14T15:13:15.441+01:00  INFO 18896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T15:13:15.454+01:00  INFO 18896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T15:13:15.454+01:00  INFO 18896 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T15:13:15.545+01:00  INFO 18896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T15:13:15.546+01:00  INFO 18896 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1803 ms
+2023-12-14T15:13:15.726+01:00  INFO 18896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T15:13:15.896+01:00  INFO 18896 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ed5b321
+2023-12-14T15:13:15.898+01:00  INFO 18896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T15:13:17.382+01:00  INFO 18896 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T15:13:17.477+01:00  INFO 18896 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T15:13:17.495+01:00  INFO 18896 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T15:13:17.495+01:00  INFO 18896 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T15:13:17.495+01:00  INFO 18896 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T15:13:17.495+01:00  INFO 18896 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T15:13:17.496+01:00  INFO 18896 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T15:13:17.496+01:00  INFO 18896 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T15:13:17.496+01:00  INFO 18896 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T15:13:17.516+01:00  INFO 18896 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T15:13:17.518+01:00  INFO 18896 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T15:13:17.603+01:00  INFO 18896 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T15:13:17.731+01:00  INFO 18896 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T15:13:17.775+01:00  INFO 18896 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T15:13:18.041+01:00  INFO 18896 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T15:13:18.125+01:00  WARN 18896 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T15:13:18.535+01:00  WARN 18896 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T15:13:18.536+01:00  WARN 18896 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T15:13:19.365+01:00  INFO 18896 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T15:13:19.369+01:00  INFO 18896 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T15:13:19.743+01:00  INFO 18896 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T15:13:20.283+01:00  WARN 18896 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T15:13:20.638+01:00  INFO 18896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T15:13:20.646+01:00  INFO 18896 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 7.662 seconds (process running for 8.504)
+2023-12-14T15:13:48.897+01:00  INFO 18896 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T15:13:48.898+01:00  INFO 18896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T15:13:48.901+01:00  INFO 18896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-14T15:13:59.752+01:00 ERROR 18896 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.aftas.aftasbackend.model.entities.Fish.getAverageWeight()" because the return value of "com.aftas.aftasbackend.model.dto.HuntingDTO.getFish()" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "com.aftas.aftasbackend.model.entities.Fish.getAverageWeight()" because the return value of "com.aftas.aftasbackend.model.dto.HuntingDTO.getFish()" is null
+	at com.aftas.aftasbackend.service.implementations.HuntingServiceImpl.createHunting(HuntingServiceImpl.java:45) ~[classes/:na]
+	at com.aftas.aftasbackend.controller.HuntingController.createHunting(HuntingController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2023-12-14T15:18:01.621+01:00  INFO 18896 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T15:18:01.642+01:00  INFO 18896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-14T15:18:01.682+01:00  INFO 18896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-14T15:18:09.135+01:00  INFO 12836 --- [main] c.a.a.AftasClubBackendApplication        : Starting AftasClubBackendApplication using Java 17.0.9 with PID 12836 (C:\Users\Youcode\Desktop\AFTAS-CLUB\AFTAS-backend\target\classes started by Youcode in C:\Users\Youcode\Desktop\AFTAS-CLUB)
+2023-12-14T15:18:09.139+01:00  INFO 12836 --- [main] c.a.a.AftasClubBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-14T15:18:10.084+01:00  INFO 12836 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14T15:18:10.208+01:00  INFO 12836 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 6 JPA repository interfaces.
+2023-12-14T15:18:10.838+01:00  INFO 12836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2023-12-14T15:18:10.849+01:00  INFO 12836 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-14T15:18:10.849+01:00  INFO 12836 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-14T15:18:10.930+01:00  INFO 12836 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-14T15:18:10.931+01:00  INFO 12836 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1729 ms
+2023-12-14T15:18:11.093+01:00  INFO 12836 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-14T15:18:11.275+01:00  INFO 12836 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61149fa5
+2023-12-14T15:18:11.277+01:00  INFO 12836 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-14T15:18:12.716+01:00  INFO 12836 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T15:18:12.824+01:00  INFO 12836 --- [main] liquibase.changelog                      : Reading from aftas_club.databasechangelog
+2023-12-14T15:18:12.840+01:00  INFO 12836 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-14T15:18:12.840+01:00  INFO 12836 --- [main] liquibase.util                           : Run:                          0
+2023-12-14T15:18:12.840+01:00  INFO 12836 --- [main] liquibase.util                           : Previously run:              17
+2023-12-14T15:18:12.840+01:00  INFO 12836 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-14T15:18:12.841+01:00  INFO 12836 --- [main] liquibase.util                           : -------------------------------
+2023-12-14T15:18:12.841+01:00  INFO 12836 --- [main] liquibase.util                           : Total change sets:           17
+2023-12-14T15:18:12.841+01:00  INFO 12836 --- [main] liquibase.util                           : Update summary generated
+2023-12-14T15:18:12.872+01:00  INFO 12836 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-14T15:18:12.874+01:00  INFO 12836 --- [main] liquibase.command                        : Command execution complete
+2023-12-14T15:18:12.978+01:00  INFO 12836 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14T15:18:13.084+01:00  INFO 12836 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-14T15:18:13.129+01:00  INFO 12836 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2023-12-14T15:18:13.392+01:00  INFO 12836 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-14T15:18:13.458+01:00  WARN 12836 --- [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-12-14T15:18:13.875+01:00  WARN 12836 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T15:18:13.875+01:00  WARN 12836 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.aftas.aftasbackend.model.entities.embedded.MemberCompetition
+2023-12-14T15:18:14.704+01:00  INFO 12836 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-14T15:18:14.707+01:00  INFO 12836 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14T15:18:15.167+01:00  INFO 12836 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-14T15:18:15.680+01:00  WARN 12836 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14T15:18:16.107+01:00  INFO 12836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2023-12-14T15:18:16.115+01:00  INFO 12836 --- [main] c.a.a.AftasClubBackendApplication        : Started AftasClubBackendApplication in 7.583 seconds (process running for 8.386)
+2023-12-14T15:18:45.511+01:00  INFO 12836 --- [http-nio-8080-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14T15:18:45.512+01:00  INFO 12836 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-14T15:18:45.513+01:00  INFO 12836 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-14T15:20:23.002+01:00  WARN 12836 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
