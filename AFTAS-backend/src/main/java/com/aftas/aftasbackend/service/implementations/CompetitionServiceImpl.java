@@ -129,7 +129,13 @@ public class CompetitionServiceImpl implements ICompetitionService {
     public Competition updateCompetition(Long competitionId, CompetitionDTO competitionDTO) {
         Competition existingCompetition = mapDTOToEntity(getCompetitionById(competitionId));
 
-        if (!isCodeValid(competitionDTO.getCode(), competitionDTO.getLocation(), competitionDTO.getDate())){
+        if (!existingCompetition.getDate().isEqual(competitionDTO.getDate())) {
+            if (!isDateNotInCompetition(competitionDTO.getDate())) {
+                throw new ValidationException("A competition already exists on the specified date.");
+            }
+        }
+
+        if (!isCodeValid(competitionDTO.getCode(), competitionDTO.getLocation(), competitionDTO.getDate())) {
             throw new ValidationException("Invalid code format! should be like this ex: Imsouane: pattern: ims-22-12-23.");
         }
 
@@ -142,6 +148,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
 
         return competitionRepository.save(existingCompetition);
     }
+
 
     @Override
     public void deleteCompetition(Long competitionId) {
