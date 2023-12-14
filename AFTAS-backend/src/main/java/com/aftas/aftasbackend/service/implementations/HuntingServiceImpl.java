@@ -64,10 +64,12 @@ public class HuntingServiceImpl implements IHuntingService {
 
             if (existingHunting != null) {
                 existingHunting.setNumberOfFish(existingHunting.getNumberOfFish() + 1);
+                setScoreInRanking(competition, member, existingHunting, rankingOptional);
                 return huntingRepository.save(existingHunting);
             } else {
                 Hunting newHunting = mapDtoToEntity(huntingDTO);
                 newHunting.setNumberOfFish(1);
+                setScoreInRanking(competition, member, newHunting, rankingOptional);
                 return huntingRepository.save(newHunting);
             }
         } else {
@@ -75,9 +77,15 @@ public class HuntingServiceImpl implements IHuntingService {
         }
     }
 
-
-
-
+    private void setScoreInRanking(Competition competition, Member member, Hunting hunting, Optional<Ranking> rankingOptional) {
+        if (rankingOptional.isPresent()) {
+            Ranking ranking = rankingOptional.get();
+            int fishLevel = hunting.getFish().getLevel().getPoints();
+            int score = fishLevel * hunting.getNumberOfFish();
+            ranking.setScore(score);
+            rankingRepository.save(ranking);
+        }
+    }
 
     public List<HuntingDTO> getAllHuntings() {
         List<Hunting> huntings = huntingRepository.findAll();

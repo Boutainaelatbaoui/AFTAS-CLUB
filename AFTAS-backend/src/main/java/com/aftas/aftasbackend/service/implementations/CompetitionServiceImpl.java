@@ -45,6 +45,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
             throw new ValidationException("The code is already exists.");
         }
         Competition competition =mapDTOToEntity(competitionDTO);
+        competition.setNumberOfParticipants(0);
         return competitionRepository.save(competition);
     }
 
@@ -136,8 +137,6 @@ public class CompetitionServiceImpl implements ICompetitionService {
         existingCompetition.setDate(competitionDTO.getDate());
         existingCompetition.setStartTime(competitionDTO.getStartTime());
         existingCompetition.setEndTime(competitionDTO.getEndTime());
-        existingCompetition.setNumberOfParticipants(competitionDTO.getNumberOfParticipants());
-        existingCompetition.setLimitParticipants(competitionDTO.getLimitParticipants());
         existingCompetition.setLocation(competitionDTO.getLocation());
         existingCompetition.setAmount(competitionDTO.getAmount());
 
