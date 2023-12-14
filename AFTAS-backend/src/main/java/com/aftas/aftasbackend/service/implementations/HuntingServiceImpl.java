@@ -14,6 +14,8 @@ import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,17 +37,22 @@ public class HuntingServiceImpl implements IHuntingService {
 
     @Override
     public Hunting createHunting(HuntingDTO huntingDTO) {
-        if (!competitionRepository.existsById(huntingDTO.getCompetitionId()) ||
-                !fishRepository.existsById(huntingDTO.getFishId()) ||
-                !memberRepository.existsById(huntingDTO.getMemberId())) {
-            throw new ValidationException("Invalid competition, fish, or member ID");
+        if (!memberRepository.existsById(huntingDTO.getMemberId())) {
+            throw new ValidationException("Invalid member ID");
         }
 
         Fish fish = fishRepository.findById(huntingDTO.getFishId())
                 .orElseThrow(() -> new ValidationException("Fish not found with ID: " + huntingDTO.getFishId()));
 
+        Competition competition = competitionRepository.findById(huntingDTO.getCompetitionId())
+                .orElseThrow(() -> new ValidationException("Competition not found with ID: " + huntingDTO.getCompetitionId()));
+
         if (huntingDTO.getWeight() == null || huntingDTO.getWeight() < fish.getAverageWeight()) {
             throw new ValidationException("Entered weight should be greater than or equal to the average weight of the fish");
+        }
+
+        if (!LocalDateTime.now().toLocalDate().isEqual(competition.getDate())) {
+            throw new ValidationException("Hunt can only be created on the same date as the competition");
         }
 
         Hunting existingHunting = huntingRepository.findByFishAndCompetitionAndMember(

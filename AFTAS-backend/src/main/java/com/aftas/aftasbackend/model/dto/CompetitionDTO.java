@@ -23,7 +23,7 @@ public class CompetitionDTO {
     @NotBlank(message = "The code should not be Empty")
     private String code;
 
-   @Future(message = "The date should be in Future")
+//   @Future(message = "The date should be in Future")
     private LocalDate date;
 
     @NotNull(message = "start time should not be Empty")
