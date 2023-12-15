@@ -96,6 +96,8 @@ public class CompetitionServiceImpl implements ICompetitionService {
             ranking.setId(memberCompetition);
             ranking.setCompetition(competition);
             ranking.setMember(member);
+            ranking.setRank(0);
+            ranking.setScore(0);
 
             rankingRepository.save(ranking);
 
@@ -103,6 +105,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
         } else {
             throw new ValidationException("You can be added to this competition just before 24 hours!!");
         }
+
     }
 
 

@@ -2,7 +2,6 @@ package com.aftas.aftasbackend.service.implementations;
 
 import com.aftas.aftasbackend.model.dto.HuntingDTO;
 import com.aftas.aftasbackend.model.entities.*;
-import com.aftas.aftasbackend.model.entities.embedded.MemberCompetition;
 import com.aftas.aftasbackend.repository.*;
 import com.aftas.aftasbackend.service.IHuntingService;
 import jakarta.validation.ValidationException;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -50,7 +48,7 @@ public class HuntingServiceImpl implements IHuntingService {
 
         LocalDateTime currentDate = LocalDateTime.now();
         LocalDateTime competitionStartDateTime = LocalDateTime.of(competition.getDate(), competition.getStartTime());
-        LocalDateTime competitionEndDateTime = LocalDateTime.of(competition.getDate(), competition.getEndTime()).plusHours(5);
+        LocalDateTime competitionEndDateTime = LocalDateTime.of(competition.getDate(), competition.getEndTime()).plusHours(2);
 
         if (currentDate.isBefore(competitionStartDateTime) || currentDate.isAfter(competitionEndDateTime)) {
             throw new ValidationException("Hunt can only be created after the competition starts and up to 5 hours after it ends");
@@ -64,12 +62,12 @@ public class HuntingServiceImpl implements IHuntingService {
 
             if (existingHunting != null) {
                 existingHunting.setNumberOfFish(existingHunting.getNumberOfFish() + 1);
-                setScoreInRanking(competition, member, existingHunting, rankingOptional);
+                updateScoreInRanking(existingHunting, rankingOptional.get());
                 return huntingRepository.save(existingHunting);
             } else {
                 Hunting newHunting = mapDtoToEntity(huntingDTO);
                 newHunting.setNumberOfFish(1);
-                setScoreInRanking(competition, member, newHunting, rankingOptional);
+                updateScoreInRanking(newHunting, rankingOptional.get());
                 return huntingRepository.save(newHunting);
             }
         } else {
@@ -77,15 +75,13 @@ public class HuntingServiceImpl implements IHuntingService {
         }
     }
 
-    private void setScoreInRanking(Competition competition, Member member, Hunting hunting, Optional<Ranking> rankingOptional) {
-        if (rankingOptional.isPresent()) {
-            Ranking ranking = rankingOptional.get();
-            int fishLevel = hunting.getFish().getLevel().getPoints();
-            int score = fishLevel * hunting.getNumberOfFish();
-            ranking.setScore(score);
-            rankingRepository.save(ranking);
-        }
+    private void updateScoreInRanking(Hunting hunting, Ranking ranking) {
+        int fishLevel = hunting.getFish().getLevel().getPoints();
+        ranking.setScore(ranking.getScore() + fishLevel);
+        ranking.setRank(0);
+        rankingRepository.save(ranking);
     }
+
 
     public List<HuntingDTO> getAllHuntings() {
         List<Hunting> huntings = huntingRepository.findAll();
