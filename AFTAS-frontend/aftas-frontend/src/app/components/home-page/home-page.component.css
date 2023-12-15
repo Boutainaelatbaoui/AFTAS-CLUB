@@ -1,0 +1,26 @@
+.home-section {
+    background-color: #003554;
+    height: 100vh;
+    width: 100%;
+}
+
+.card-home{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px !important;
+    min-height: 380px;
+    
+}
+
+.home-text {
+    background-color: rgba(255, 255, 255, 0.948);
+    border-radius: 20%;
+    width: fit-content;
+}
+
+.main-btn{
+    border-radius: 30px !important;
+    background-color: #003554 !important;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px !important;
+}

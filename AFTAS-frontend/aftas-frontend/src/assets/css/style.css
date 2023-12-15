@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins&family=Roboto+Condensed&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-font {
+    font-family: 'Fjalla One', sans-serif;
+}
