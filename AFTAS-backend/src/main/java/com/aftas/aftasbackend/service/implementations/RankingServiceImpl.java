@@ -44,5 +44,19 @@ public class RankingServiceImpl implements IRankingService {
         }
     }
 
+    public List<Ranking> getRankingForCompetition(Long competitionId) {
+        Competition competition = competitionRepository.findById(competitionId)
+                .orElseThrow(() -> new ValidationException("Competition not found with ID: " + competitionId));
+
+        LocalDateTime competitionEndDateTime = LocalDateTime.of(competition.getDate(), competition.getEndTime());
+        LocalDateTime twoHoursAfterEnd = competitionEndDateTime.plusHours(2);
+
+        if (LocalDateTime.now().isAfter(twoHoursAfterEnd)) {
+            return rankingRepository.findByCompetitionOrderByScoreDesc(competition);
+        } else {
+            throw new ValidationException("Ranking can only be retrieved after endTime + 2 hours after it ends");
+        }
+    }
+
 
 }
