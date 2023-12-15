@@ -23,9 +23,8 @@ public class RankingController {
     }
 
     @GetMapping ("/{competitionId}")
-    public ResponseEntity<String> rankingsForCompetition(@PathVariable Long competitionId) {
-        rankingService.rankingsForCompetition(competitionId);
-        return ResponseEntity.ok("Rankings updated successfully.");
+    public ResponseEntity<List<Ranking>> rankingsForCompetition(@PathVariable Long competitionId) {
+        return ResponseEntity.ok(rankingService.rankingsForCompetition(competitionId));
     }
 
     @GetMapping("/competition/{competitionId}")

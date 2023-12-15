@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public interface IRankingService {
-    void rankingsForCompetition(Long competitionId);
+    List<Ranking> rankingsForCompetition(Long competitionId);
     List<Ranking> getRankingForCompetition(Long competitionId);
 }
 

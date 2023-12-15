@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RankingServiceImpl implements IRankingService {
@@ -24,7 +25,7 @@ public class RankingServiceImpl implements IRankingService {
     }
 
     @Override
-    public void rankingsForCompetition(Long competitionId) {
+    public List<Ranking> rankingsForCompetition(Long competitionId) {
         Competition competition = competitionRepository.findById(competitionId)
                 .orElseThrow(() -> new ValidationException("Competition not found with ID: " + competitionId));
 
@@ -34,15 +35,25 @@ public class RankingServiceImpl implements IRankingService {
         if (LocalDateTime.now().isAfter(twoHoursAfterEnd)) {
             List<Ranking> rankings = rankingRepository.findByCompetitionOrderByScoreDesc(competition);
 
-            for (int i = 0; i < rankings.size(); i++) {
-                rankings.get(i).setRank(i + 1);
+            boolean rankingsAlreadySet = rankings.stream().allMatch(ranking -> ranking.getRank() != 0);
+
+            if (!rankingsAlreadySet) {
+                for (int i = 0; i < rankings.size(); i++) {
+                    rankings.get(i).setRank(i + 1);
+                }
+
+                rankingRepository.saveAll(rankings);
+            } else {
+                throw new ValidationException("Rankings have already been set for this competition.");
             }
 
-            rankingRepository.saveAll(rankings);
+            return rankings.stream().limit(3).collect(Collectors.toList());
         } else {
             throw new ValidationException("Rankings can only be updated after 2 hours from the end of the competition.");
         }
     }
+
+
 
     public List<Ranking> getRankingForCompetition(Long competitionId) {
         Competition competition = competitionRepository.findById(competitionId)
