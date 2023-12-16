@@ -3,8 +3,16 @@
         <h1 class="fw-bold text-color pb-3">Competitions</h1>
         <button routerLink="/competition-form"  class="btn main-btn text-white fs-5 fw-bold py-2 px-4 mb-4" id="">Create competition</button>
     </div>
+    <div class="mt-5 d-flex gap-5 align-items-center mb-3">
+        <label class="form-label fs-4">Filter by Status:</label>
+        <div class="btn-group">
+        <button type="button" class="btn btn-primary" (click)="selectFilter('')">Show All</button>
+        <button type="button" class="btn btn-primary" (click)="selectFilter('en cours')">En Cours</button>
+        <button type="button" class="btn btn-primary" (click)="selectFilter('fermé')">Fermé</button>
+        </div>
+    </div>  
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-5">
-        <div class="col" *ngFor="let competition of competitions">
+        <div class="col" *ngFor="let competition of filteredCompetitions">
             <div class="card card-menu btn bg-white mb-3 p-0" style="background-color: white !important;">
                 <div class="">
                     <img [src]="imageSection2" class="img-fluid img-form" />
