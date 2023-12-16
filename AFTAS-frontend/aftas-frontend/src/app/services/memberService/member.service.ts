@@ -15,5 +15,10 @@ export class MemberService {
   getMembers(): Observable<Member[]> {
     return this.http.get<Member[]>(this.apiUrl + '/members/all');
   }
+
+  createMember(member: Member): Observable<any> {
+    return this.http.post('http://localhost:8080/api/members', member, { responseType: 'text' });
+  }
+  
 }
 

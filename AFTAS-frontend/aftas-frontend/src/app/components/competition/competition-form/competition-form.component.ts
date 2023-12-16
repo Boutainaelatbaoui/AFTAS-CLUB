@@ -58,8 +58,4 @@ export class CompetitionFormComponent {
     return 'An unknown error occurred.';
   }
   
-  
-  
-  
-  
 }

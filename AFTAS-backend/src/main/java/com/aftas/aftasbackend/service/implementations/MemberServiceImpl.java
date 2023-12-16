@@ -63,8 +63,12 @@ public class MemberServiceImpl implements IMemberService {
         if (memberRepository.existsByIdentityNumber(memberDTO.getIdentityNumber())){
             throw new ValidationException("The Identity Number is already exists.");
         }
+        if (!memberDTO.getIdentityNumber().matches("^[A-Z]{2}\\d{8}$")) {
+            throw new ValidationException("Invalid member identity pattern");
+        }
         Member member = mapDTOToEntity(memberDTO);
         member.setNum(getMemberNum());
+        member.setAccessionDate(LocalDate.now());
 
         return memberRepository.save(member);
     }

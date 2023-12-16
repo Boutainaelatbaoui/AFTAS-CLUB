@@ -28,7 +28,6 @@ public class MemberDTO {
     @Size(min = 2, max = 50, message = "Family name must be between 2 and 50 characters")
     private String familyName;
 
-    @NotNull(message = "Accession date cannot be null")
     private LocalDate accessionDate;
 
     @NotBlank(message = "Nationality cannot be blank")
