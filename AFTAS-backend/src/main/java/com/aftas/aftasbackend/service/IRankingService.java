@@ -9,5 +9,6 @@ import java.util.List;
 public interface IRankingService {
     List<Ranking> rankingsForCompetition(Long competitionId);
     List<Ranking> getRankingForCompetition(Long competitionId);
+    List<Ranking> getAllRankings();
 }
 

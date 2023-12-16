@@ -31,5 +31,10 @@ public class RankingController {
     public List<Ranking> getRankingForCompetition(@PathVariable Long competitionId) {
         return rankingService.getRankingForCompetition(competitionId);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Ranking>> getAllRankings() {
+        return ResponseEntity.ok(rankingService.getAllRankings());
+    }
 }
 

@@ -69,5 +69,11 @@ public class RankingServiceImpl implements IRankingService {
         }
     }
 
+    @Override
+    public List<Ranking> getAllRankings() {
+        // Implement logic to get all rankings
+        return rankingRepository.findAll();
+    }
+
 
 }

@@ -15,6 +15,7 @@ import { HuntingComponent } from './components/hunting/hunting.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { CompetitionFormComponent } from './components/competition/competition-form/competition-form.component';
 import { MemberFormComponent } from './components/member/member-form/member-form.component';
+import { CompetitionMemberFormComponent } from './components/competition/competition-member-form/competition-member-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MemberFormComponent } from './components/member/member-form/member-form
     HuntingComponent,
     RankingComponent,
     CompetitionFormComponent,
-    MemberFormComponent
+    MemberFormComponent,
+    CompetitionMemberFormComponent
   ],
   imports: [
     [BrowserModule, FormsModule],

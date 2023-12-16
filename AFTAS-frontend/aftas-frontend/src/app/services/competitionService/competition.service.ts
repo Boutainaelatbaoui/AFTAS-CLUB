@@ -19,4 +19,11 @@ export class CompetitionService {
   createCompetition(competition: Competition): Observable<Competition> {
     return this.http.post<Competition>(`${this.apiUrl}/competitions`, competition);
   }
+
+  addMemberToCompetition(competitionId: number, memberId: number): Observable<any> {
+    const url = `${this.apiUrl}/competitions/add-member/${competitionId}/${memberId}`;
+    
+    return this.http.post(url, {}, { responseType: 'text' });
+}
+
 }

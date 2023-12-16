@@ -1,0 +1,23 @@
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="col-6">
+      <h2 class="fw-bold text-color pb-3">Competition Member Form</h2>
+      <div class="card card-menu p-3 mt-4">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+          <div class="mb-3">
+            <label for="competitionId" class="form-label">Select Competition:</label>
+            <select id="competitionId" [(ngModel)]="selectedCompetitionId" name="competitionId" class="form-select" required>
+              <option *ngFor="let competition of competitions" [value]="competition.id">{{ competition.code }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="memberId" class="form-label">Select Member:</label>
+            <select id="memberId" [(ngModel)]="selectedMemberId" name="memberId" class="form-select" required>
+              <option *ngFor="let member of members" [value]="member.id">{{ member.name }}</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Add Member to Competition</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
