@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, FormGroup} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { MemberComponent } from './components/member/member.component';
 import { CompetitionComponent } from './components/competition/competition.component';
 import { HuntingComponent } from './components/hunting/hunting.component';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { CompetitionFormComponent } from './components/competition/competition-form/competition-form.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,15 @@ import { RankingComponent } from './components/ranking/ranking.component';
     MemberComponent,
     CompetitionComponent,
     HuntingComponent,
-    RankingComponent
+    RankingComponent,
+    CompetitionFormComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    [BrowserModule, FormsModule],
+      AppRoutingModule,
+      HttpClientModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

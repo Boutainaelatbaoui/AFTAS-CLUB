@@ -14,13 +14,15 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
-        config.addAllowedMethod("*");
+        config.addAllowedOriginPattern("*");
         config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        config.setAllowCredentials(true);
 
         source.registerCorsConfiguration("/**", config);
+
+        System.out.println("CORS configuration applied!");
+
         return new CorsFilter(source);
     }
 }
-
