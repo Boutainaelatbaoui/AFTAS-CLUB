@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { CompetitionService } from 'src/app/services/competitionService/competition.service';
 import { Competition } from 'src/app/models/competition';
 import { formatDate } from '@angular/common';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-competition-form',
@@ -24,28 +25,39 @@ export class CompetitionFormComponent {
 
   constructor(
     private competitionService: CompetitionService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   onSubmit(form: NgForm): void {
     if (form.valid) {
-      // Format the date without the time component
       this.competition.date = formatDate(this.competition.date, 'yyyy-MM-dd', 'en-US');
   
-      // Directly use start and end times from the form (they are already strings)
       this.competitionService.createCompetition(this.competition).subscribe(
-  
-        
         (createdCompetition) => {
           console.log('Competition created successfully:', createdCompetition);
-          console.log(this.competition);
+          this.router.navigate(['/competitions']);
         },
         (error) => {
-          console.log(this.competition);
           console.error('Error creating competition:', error);
+  
+          const errorMessage = this.extractErrorMessage(error);
+          alert(`Error creating competition: ${errorMessage}`);
         }
       );
     }
   }
+  
+  private extractErrorMessage(error: any): string {
+    if (error.error && typeof error.error === 'object' && 'message' in error.error) {
+      return error.error.message;
+    } else if (error.message) {
+      return error.message;
+    }
+  
+    return 'An unknown error occurred.';
+  }
+  
   
   
   
