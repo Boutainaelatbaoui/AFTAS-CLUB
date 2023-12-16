@@ -35,7 +35,7 @@ public class RankingServiceImpl implements IRankingService {
         if (LocalDateTime.now().isAfter(twoHoursAfterEnd)) {
             List<Ranking> rankings = rankingRepository.findByCompetitionOrderByScoreDesc(competition);
 
-            boolean rankingsAlreadySet = rankings.stream().allMatch(ranking -> ranking.getRank() != 0);
+            boolean rankingsAlreadySet = rankings.stream().anyMatch(ranking -> ranking.getRank() != 0);
 
             if (!rankingsAlreadySet) {
                 for (int i = 0; i < rankings.size(); i++) {
@@ -71,7 +71,6 @@ public class RankingServiceImpl implements IRankingService {
 
     @Override
     public List<Ranking> getAllRankings() {
-        // Implement logic to get all rankings
         return rankingRepository.findAll();
     }
 

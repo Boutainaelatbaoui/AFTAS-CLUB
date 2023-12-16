@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Ranking } from 'src/app/models/ranking';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RankingService {
+  private apiUrl = environment.apiUrl;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  getAllRankings(): Observable<Ranking[]> {
+    return this.http.get<Ranking[]>(`${this.apiUrl}/rankings/all`);
+  }
 }

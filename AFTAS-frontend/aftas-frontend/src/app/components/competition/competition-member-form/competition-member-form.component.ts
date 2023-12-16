@@ -4,6 +4,7 @@ import { CompetitionService } from 'src/app/services/competitionService/competit
 import { MemberService } from 'src/app/services/memberService/member.service';
 import { Competition } from 'src/app/models/competition';
 import { Member } from 'src/app/models/member';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-competition-member-form',
@@ -16,7 +17,10 @@ export class CompetitionMemberFormComponent implements OnInit {
   selectedCompetitionId: number = 0;
   selectedMemberId: number = 0;
 
-  constructor(private competitionService: CompetitionService, private memberService: MemberService) {}
+  constructor(private competitionService: CompetitionService,
+    private memberService: MemberService,
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.loadCompetitions();
@@ -43,7 +47,7 @@ export class CompetitionMemberFormComponent implements OnInit {
       this.competitionService.addMemberToCompetition(competitionId, memberId).subscribe(
         () => {
           console.log('Member added to the competition successfully.');
-
+          this.router.navigate(['/rankings']);
         },
         (error) => {
           console.error('Error adding member to competition:', error);

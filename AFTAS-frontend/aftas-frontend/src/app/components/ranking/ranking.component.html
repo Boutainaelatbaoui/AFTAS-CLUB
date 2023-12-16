@@ -1,1 +1,21 @@
-<p>ranking works!</p>
+<div class="container mt-5 mb-5">
+    <h2 class="fw-bold text-color pb-3 mb-4">Ranking Table</h2>
+    <table id="rankingTable" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+            <th>Rank</th>
+            <th>Score</th>
+            <th>Competition</th>
+            <th>Member</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rank of rankings">
+            <td>{{ rank.rank }}</td>
+            <td>{{ rank.score }}</td>
+            <td>{{ rank.competition.code }}</td>
+            <td>{{ rank.member.name + " " + rank.member.familyName }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
