@@ -7,6 +7,7 @@ import { MemberComponent } from './components/member/member.component';
 import { MemberFormComponent } from './components/member/member-form/member-form.component';
 import { CompetitionMemberFormComponent } from './components/competition/competition-member-form/competition-member-form.component';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { HuntingComponent } from './components/hunting/hunting.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'competitions', component: CompetitionComponent },
   { path: 'members', component: MemberComponent },
   { path: 'rankings', component:RankingComponent },
+  { path: 'huntings', component: HuntingComponent },
   { path: 'competition-member-form', component: CompetitionMemberFormComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
