@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h2 class="fw-bold text-color pb-3">Create Hunting Record</h2>
+    </div>
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" novalidate>
+        <div class="mb-3">
+        <label for="fishId" class="form-label">Fish:</label>
+        <select class="form-select" id="fishId" name="fishId" [(ngModel)]="hunting.fishId" required>
+            <option *ngFor="let fish of fishes" [value]="fish.id">{{ fish.name }}</option>
+        </select>
+        </div>
+        <div class="mb-3">
+            <label for="competitionId" class="form-label">Competition:</label>
+            <select class="form-select" id="competitionId" name="competitionId" [(ngModel)]="hunting.competitionId" required>
+              <option *ngFor="let competition of competitions" [value]="competition.id">{{ competition.code }}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+        <label for="weight" class="form-label">Weight:</label>
+        <input type="number" class="form-control" id="weight" name="weight" [(ngModel)]="hunting.weight" required>
+        </div>
+        <div class="mb-3">
+        <label for="memberId" class="form-label">Member:</label>
+        <select class="form-select" id="memberId" name="memberId" [(ngModel)]="hunting.memberId" required>
+            <option *ngFor="let member of members" [value]="member.id">{{ member.name }}</option>
+        </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Hunting Record</button>
+    </form>
+</div>
