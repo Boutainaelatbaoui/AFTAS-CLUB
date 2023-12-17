@@ -32,7 +32,7 @@ import { HuntingFormComponent } from './components/hunting/hunting-form/hunting-
     CompetitionFormComponent,
     MemberFormComponent,
     CompetitionMemberFormComponent,
-    HuntingFormComponent
+    HuntingFormComponent,
   ],
   imports: [
     [BrowserModule, FormsModule],

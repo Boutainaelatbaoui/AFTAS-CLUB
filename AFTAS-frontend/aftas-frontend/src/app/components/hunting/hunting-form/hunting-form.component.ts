@@ -4,6 +4,7 @@ import { HuntingService } from 'src/app/services/huntingService/hunting.service'
 import { Hunting } from 'src/app/models/hunting';
 import { MemberService } from 'src/app/services/memberService/member.service';
 import { CompetitionService } from 'src/app/services/competitionService/competition.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-hunting-form',
@@ -26,7 +27,9 @@ export class HuntingFormComponent implements OnInit {
   constructor(
     private huntingService: HuntingService,
     private memberService: MemberService,
-    private competitionService: CompetitionService    
+    private competitionService: CompetitionService,
+    private route: ActivatedRoute,
+    private router: Router 
   ) {}
 
   ngOnInit(): void {
@@ -58,6 +61,7 @@ export class HuntingFormComponent implements OnInit {
       this.huntingService.createHunting(this.hunting).subscribe(
         (createdHunting) => {
           console.log('Hunting record created successfully:', createdHunting);
+          this.router.navigate(['/huntings']);
         },
         (error) => {
           console.error('Error creating hunting record:', error);

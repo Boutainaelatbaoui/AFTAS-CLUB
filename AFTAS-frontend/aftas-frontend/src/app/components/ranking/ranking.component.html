@@ -1,5 +1,18 @@
 <div class="container mt-5 mb-5">
-    <h2 class="fw-bold text-color pb-3 mb-4">Ranking Table</h2>
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="fw-bold text-color pb-3 mb-4">Ranking Table</h2>
+    </div>
+    <div class="d-flex gap-5 align-items-center mb-4">
+        <div class="d-flex align-items-center gap-5 me-3">
+            <label for="competitionId" class="form-label">Select Competition:</label>
+            <select class="form-select" id="competitionId" name="competitionId" [(ngModel)]="selectedCompetitionId" (change)="onCompetitionChange()" required>
+            <option *ngFor="let competition of competitions" [value]="competition.id">{{ competition.code }}</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="showAllRankings()">Show All</button>
+        </div>
+    </div>
     <table id="rankingTable" class="table table-striped table-bordered">
         <thead>
             <tr>

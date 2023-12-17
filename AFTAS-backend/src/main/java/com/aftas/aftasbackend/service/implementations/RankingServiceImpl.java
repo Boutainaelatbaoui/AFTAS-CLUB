@@ -47,7 +47,7 @@ public class RankingServiceImpl implements IRankingService {
                 throw new ValidationException("Rankings have already been set for this competition.");
             }
 
-            return rankings.stream().limit(3).collect(Collectors.toList());
+            return rankings.stream().collect(Collectors.toList());
         } else {
             throw new ValidationException("Rankings can only be updated after 2 hours from the end of the competition.");
         }

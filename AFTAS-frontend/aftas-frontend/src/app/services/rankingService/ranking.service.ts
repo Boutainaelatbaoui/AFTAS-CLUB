@@ -15,4 +15,8 @@ export class RankingService {
   getAllRankings(): Observable<Ranking[]> {
     return this.http.get<Ranking[]>(`${this.apiUrl}/rankings/all`);
   }
+
+  getRankingsForCompetition(competitionId: number): Observable<Ranking[]> {
+    return this.http.get<Ranking[]>(`${this.apiUrl}/rankings/${competitionId}`);
+  }
 }
