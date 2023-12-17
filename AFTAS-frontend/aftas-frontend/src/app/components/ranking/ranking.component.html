@@ -9,9 +9,6 @@
             <option *ngFor="let competition of competitions" [value]="competition.id">{{ competition.code }}</option>
             </select>
         </div>
-        <div>
-            <button class="btn btn-primary" (click)="showAllRankings()">Show All</button>
-        </div>
     </div>
     <table id="rankingTable" class="table table-striped table-bordered">
         <thead>
