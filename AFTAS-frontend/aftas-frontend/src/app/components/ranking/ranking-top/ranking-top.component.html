@@ -1,0 +1,24 @@
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Top 3 Rankings for Competition {{ competitionId }}</h2>
+    </div>
+    <div class="d-flex gap-5 align-items-center mb-4">
+      <div class="d-flex align-items-center gap-5 me-3">
+        <label for="competitionSelect" class="form-label">Select Competition:</label>
+        <select id="competitionSelect" class="form-select" [(ngModel)]="competitionId" (change)="onCompetitionChange()">
+          <option *ngFor="let competition of competitions" [value]="competition.id">
+            {{ competition.code }}
+          </option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="podium">
+      <div *ngFor="let ranking of topRankings; let i = index" class="podium-item" [ngClass]="{'first-place': i === 0, 'second-place': i === 1, 'third-place': i === 2}">
+        <div class="rank">{{ i + 1 }}</div>
+        <div class="score">{{ ranking.score }}</div>
+        <div class="member-name">{{ ranking.member.name }} {{ ranking.member.familyName }}</div>
+      </div>
+    </div>
+  </div>
+  

@@ -63,7 +63,15 @@ public class RankingServiceImpl implements IRankingService {
         LocalDateTime twoHoursAfterEnd = competitionEndDateTime.plusHours(2);
 
         if (LocalDateTime.now().isAfter(twoHoursAfterEnd)) {
-            return rankingRepository.findByCompetitionOrderByScoreDesc(competition).stream().limit(3).collect(Collectors.toList());
+            List<Ranking> rankings = rankingRepository.findByCompetitionOrderByScoreDesc(competition);
+            boolean rankingsAlreadySet = rankings.stream().anyMatch(ranking -> ranking.getRank() != 0);
+
+            if (rankingsAlreadySet) {
+                return rankings.stream().limit(3).collect(Collectors.toList());
+            } else {
+                throw new ValidationException("Rankings have not already been set for this competition.");
+            }
+
         } else {
             throw new ValidationException("Ranking can only be retrieved after endTime + 2 hours after it ends");
         }
