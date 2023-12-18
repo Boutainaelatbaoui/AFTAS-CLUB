@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, FormGroup} from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +41,8 @@ import { RankingTopComponent } from './components/ranking/ranking-top/ranking-to
   imports: [
     [BrowserModule, FormsModule],
       AppRoutingModule,
-      HttpClientModule
+      HttpClientModule,
+      MatPaginatorModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

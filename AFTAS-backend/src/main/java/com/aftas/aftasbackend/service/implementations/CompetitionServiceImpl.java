@@ -11,6 +11,8 @@ import com.aftas.aftasbackend.repository.RankingRepository;
 import com.aftas.aftasbackend.service.ICompetitionService;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -112,10 +114,11 @@ public class CompetitionServiceImpl implements ICompetitionService {
 
 
     @Override
-    public List<CompetitionDTO> getAllCompetitions() {
-        List<Competition> competitions = competitionRepository.findAll();
-        return competitions.stream().map(this::mapEntityToDTO).collect(Collectors.toList());
+    public Page<CompetitionDTO> getAllCompetitions(Pageable pageable) {
+        Page<Competition> competitions = competitionRepository.findAll(pageable);
+        return competitions.map(this::mapEntityToDTO);
     }
+
 
     @Override
     public CompetitionDTO getCompetitionById(Long competitionId) {
