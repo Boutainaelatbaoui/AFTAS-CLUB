@@ -14,6 +14,7 @@ export class RankingTopComponent implements OnInit {
   topRankings: Ranking[] = [];
   competitions: Competition[] = [];
   imageR: string = 'assets/img/podium.png';
+  imageRa: string = 'assets/img/double-down.gif';
 
   constructor(
     private rankingDetailsService: RankingService,
