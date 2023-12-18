@@ -13,6 +13,7 @@ export class RankingTopComponent implements OnInit {
   competitionId: number = 0;
   topRankings: Ranking[] = [];
   competitions: Competition[] = [];
+  imageR: string = 'assets/img/podium.png';
 
   constructor(
     private rankingDetailsService: RankingService,
