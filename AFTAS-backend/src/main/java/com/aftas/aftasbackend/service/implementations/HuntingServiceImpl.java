@@ -75,7 +75,7 @@ public class HuntingServiceImpl implements IHuntingService {
         }
     }
 
-    private void updateScoreInRanking(Hunting hunting, Ranking ranking) {
+    public void updateScoreInRanking(Hunting hunting, Ranking ranking) {
         int fishLevel = hunting.getFish().getLevel().getPoints();
         ranking.setScore(ranking.getScore() + fishLevel);
         ranking.setRank(0);
