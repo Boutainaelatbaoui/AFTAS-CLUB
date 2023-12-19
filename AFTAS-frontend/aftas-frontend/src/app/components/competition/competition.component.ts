@@ -14,7 +14,7 @@ export class CompetitionComponent implements OnInit {
   filteredCompetitions: Competition[] = [];
   selectedFilter: string = '';
   imageSection2: string = 'assets/img/Hunt2.jpg';
-  pageSizeOptions: number[] = [5, 10, 25, 100];
+  pageSizeOptions: number[] = [3, 5, 25, 100];
   totalItems = 0;
   currentPage = 0;
   pageSize = 3;
@@ -32,6 +32,7 @@ export class CompetitionComponent implements OnInit {
   
         this.competitions = response.content;
         this.filteredCompetitions = response.content;
+        console.log(response.content);
         this.totalItems = response.totalElements;
       },
       (error) => {
@@ -51,7 +52,7 @@ export class CompetitionComponent implements OnInit {
   filterCompetitions(): void {
     if (this.selectedFilter === 'en cours') {
       this.filteredCompetitions = this.competitions.filter(
-        (competition) => this.isCompetitionInProgress(competition)
+        (competition) => this.isCompetitionInProgress(competition)        
       );
     } else if (this.selectedFilter === 'fermé') {
       this.filteredCompetitions = this.competitions.filter(

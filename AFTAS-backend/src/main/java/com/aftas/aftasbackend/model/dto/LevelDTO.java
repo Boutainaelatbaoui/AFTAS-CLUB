@@ -1,14 +1,14 @@
 package com.aftas.aftasbackend.model.dto;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import jakarta.validation.constraints.*;
 
 @Getter
 @Setter
-@Builder
+@NoArgsConstructor
 public class LevelDTO {
     private Long id;
 

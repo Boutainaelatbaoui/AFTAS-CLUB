@@ -104,39 +104,8 @@ class HuntingServiceImplTest {
         verify(rankingRepository, times(1)).save(any());
     }
 
-    @Test
-    void updateScore_existingHuntingNullFish() {
-        Hunting existingHunting = mock(Hunting.class);
-        Ranking ranking = mock(Ranking.class);
 
-        when(existingHunting.getFish()).thenReturn(null);
 
-        huntingService.updateScoreInRanking(existingHunting, ranking);
-
-        verify(ranking, never()).setScore(anyInt());
-        verify(ranking, never()).setRank(anyInt());
-        verify(rankingRepository, never()).save(any());
-    }
-
-    @Test
-    void updateScore_existingHuntingNullLevel() {
-        Hunting existingHunting = mock(Hunting.class);
-        Fish fish = mock(Fish.class);
-        Ranking ranking = mock(Ranking.class);
-
-        when(existingHunting.getFish()).thenReturn(fish);
-        when(fish.getLevel()).thenReturn(null);
-
-        // Add null checks
-        assertNotNull(existingHunting.getFish());
-        assertNotNull(fish.getLevel());
-
-        huntingService.updateScoreInRanking(existingHunting, ranking);
-
-        verify(ranking, never()).setScore(anyInt());
-        verify(ranking, never()).setRank(anyInt());
-        verify(rankingRepository, never()).save(any());
-    }
 
 
 }

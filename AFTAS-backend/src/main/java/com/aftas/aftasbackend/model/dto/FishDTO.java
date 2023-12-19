@@ -3,13 +3,14 @@ package com.aftas.aftasbackend.model.dto;
 import com.aftas.aftasbackend.model.entities.Level;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import jakarta.validation.constraints.*;
 
 @Getter
 @Setter
-@Builder
+@NoArgsConstructor
 public class FishDTO {
     private Long id;
 
