@@ -32,9 +32,15 @@ public class CompetitionController {
         return new ResponseEntity<>(createdCompetition, HttpStatus.CREATED);
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<Page<CompetitionDTO>> getAllCompetitions(Pageable pageable) {
+    @GetMapping("/paged")
+    public ResponseEntity<Page<CompetitionDTO>> getAllCompetitionsPaged(Pageable pageable) {
         Page<CompetitionDTO> competitions = competitionService.getAllCompetitions(pageable);
+        return new ResponseEntity<>(competitions, HttpStatus.OK);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<CompetitionDTO>> getAllCompetitions() {
+        List<CompetitionDTO> competitions = competitionService.getAllCompetitions();
         return new ResponseEntity<>(competitions, HttpStatus.OK);
     }
 
@@ -67,5 +73,4 @@ public class CompetitionController {
         return new ResponseEntity<>("Member added to the competition successfully.", HttpStatus.OK);
 
     }
-
 }

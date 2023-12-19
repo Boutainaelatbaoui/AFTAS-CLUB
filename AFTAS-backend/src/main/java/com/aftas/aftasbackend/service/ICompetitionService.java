@@ -12,6 +12,7 @@ import java.util.List;
 public interface ICompetitionService {
     public Competition createCompetition(CompetitionDTO competitionDTO);
     Page<CompetitionDTO> getAllCompetitions(Pageable pageable);
+    public List<CompetitionDTO> getAllCompetitions();
     public CompetitionDTO getCompetitionById(Long competitionId);
     public Competition updateCompetition(Long competitionId, CompetitionDTO competitionDTO);
     public void deleteCompetition(Long competitionId);

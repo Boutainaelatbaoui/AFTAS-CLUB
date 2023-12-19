@@ -28,7 +28,7 @@ export class CompetitionService {
   
   getAllPageCompetitions(page: number, size: number): Observable<CompetitionPage> {
     const params = new HttpParams().set('page', page.toString()).set('size', size.toString());
-    return this.http.get<CompetitionPage>(`${this.apiUrl}/competitions/all`, { params });
+    return this.http.get<CompetitionPage>(`${this.apiUrl}/competitions/paged`, { params });
   }
   
   

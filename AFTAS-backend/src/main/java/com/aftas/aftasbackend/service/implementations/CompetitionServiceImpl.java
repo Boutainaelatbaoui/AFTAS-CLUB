@@ -110,15 +110,11 @@ public class CompetitionServiceImpl implements ICompetitionService {
 
     }
 
-
-
-
     @Override
     public Page<CompetitionDTO> getAllCompetitions(Pageable pageable) {
         Page<Competition> competitions = competitionRepository.findAll(pageable);
         return competitions.map(this::mapEntityToDTO);
     }
-
 
     @Override
     public CompetitionDTO getCompetitionById(Long competitionId) {
@@ -160,6 +156,12 @@ public class CompetitionServiceImpl implements ICompetitionService {
     public void deleteCompetition(Long competitionId) {
         Competition existingCompetition = mapDTOToEntity(getCompetitionById(competitionId));
         competitionRepository.delete(existingCompetition);
+    }
+
+    @Override
+    public List<CompetitionDTO> getAllCompetitions() {
+        List<Competition> competitions = competitionRepository.findAll();
+        return competitions.stream().map(this::mapEntityToDTO).collect(Collectors.toList());
     }
 
     private Competition mapDTOToEntity(CompetitionDTO competitionDTO) {
