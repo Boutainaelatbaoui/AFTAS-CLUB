@@ -84,6 +84,58 @@ class HuntingServiceImplTest {
     }
 
     @Test
+    void testUpdateScoreExistingHunt() {
+        Hunting hunting = Hunting.builder()
+                .fish(Fish.builder().id(1L).level(Level.builder().id(1L).code(1).points(10).build()).build())
+                .competition(Competition.builder().id(1L).build())
+                .member(Member.builder().id(1L).build())
+                .build();
+
+        Ranking ranking = new Ranking();
+        ranking.setRank(1);
+        ranking.setScore(10);
+        ranking.setMember(Member.builder().id(1L).build());
+        ranking.setCompetition(Competition.builder().id(1L).build());
+
+        when(huntingRepository.findByFishAndCompetitionAndMember(
+                hunting.getFish().getId(), hunting.getCompetition().getId(), hunting.getMember().getId()))
+                .thenReturn(hunting);
+        when(rankingRepository.findByCompetitionAndMember(hunting.getCompetition(), hunting.getMember()))
+                .thenReturn(Optional.of(ranking));
+
+        huntingService.updateScoreInRanking(hunting, ranking);
+
+        verify(rankingRepository, times(1)).save(ranking);
+        assertEquals(20, ranking.getScore());
+    }
+
+    @Test
+    void testUpdateScoreNewHunt() {
+        Hunting hunting = Hunting.builder()
+                .fish(Fish.builder().id(1L).level(Level.builder().id(1L).code(1).points(10).build()).build())
+                .competition(Competition.builder().id(1L).build())
+                .member(Member.builder().id(1L).build())
+                .build();
+
+        Ranking ranking = new Ranking();
+        ranking.setRank(0);
+        ranking.setScore(0);
+        ranking.setMember(Member.builder().id(1L).build());
+        ranking.setCompetition(Competition.builder().id(1L).build());
+
+        when(huntingRepository.findByFishAndCompetitionAndMember(
+                hunting.getFish().getId(), hunting.getCompetition().getId(), hunting.getMember().getId()))
+                .thenReturn(null);
+        when(rankingRepository.findByCompetitionAndMember(hunting.getCompetition(), hunting.getMember()))
+                .thenReturn(Optional.of(ranking));
+
+        huntingService.updateScoreInRanking(hunting, ranking);
+
+        verify(rankingRepository, times(1)).save(ranking);
+        assertEquals(10, ranking.getScore());
+    }
+
+    @Test
     void TestUpdateScoreInRanking() {
         Hunting existingHunting = mock(Hunting.class);
         Fish fish = mock(Fish.class);
@@ -103,9 +155,5 @@ class HuntingServiceImplTest {
         verify(ranking).setRank(0);
         verify(rankingRepository, times(1)).save(any());
     }
-
-
-
-
 
 }

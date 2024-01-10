@@ -14,7 +14,7 @@ public class LevelMapper {
     public LevelMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
 
-        modelMapper.createTypeMap(LevelDTO.class, Level.class);
+        //modelMapper.createTypeMap(LevelDTO.class, Level.class);
     }
 
     public LevelDTO mapToDTO(Level level) {

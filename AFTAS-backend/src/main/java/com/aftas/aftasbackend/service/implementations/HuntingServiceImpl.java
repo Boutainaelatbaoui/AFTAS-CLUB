@@ -51,7 +51,7 @@ public class HuntingServiceImpl implements IHuntingService {
         LocalDateTime competitionEndDateTime = LocalDateTime.of(competition.getDate(), competition.getEndTime()).plusHours(2);
 
         if (currentDate.isBefore(competitionStartDateTime) || currentDate.isAfter(competitionEndDateTime)) {
-            throw new ValidationException("Hunt can only be created after the competition starts and up to 2 hours after it ends");
+            throw new ValidationException("Hunt can only be created before the competition starts and up to 2 hours after it ends");
         }
 
         Optional<Ranking> rankingOptional = rankingRepository.findByCompetitionAndMember(competition, member);

@@ -9,8 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MemberComponent } from './components/member/member.component';
 import { CompetitionComponent } from './components/competition/competition.component';
 import { HuntingComponent } from './components/hunting/hunting.component';
@@ -26,8 +24,6 @@ import { RankingTopComponent } from './components/ranking/ranking-top/ranking-to
     AppComponent,
     HomePageComponent,
     NavbarComponent,
-    FooterComponent,
-    DashboardComponent,
     MemberComponent,
     CompetitionComponent,
     HuntingComponent,
