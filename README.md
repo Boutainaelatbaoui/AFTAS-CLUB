@@ -118,7 +118,6 @@ Exécutez la commande suivante dans le terminal :
 ````docker-compose up --build ````
 
 ## Vérification
-Ouvrez votre navigateur et accédez à l'URL spécifiée dans votre application frontend (par défaut, http://localhost:4200).
 Confirmez que votre application fonctionne correctement dans l'environnement Docker.
 
 
