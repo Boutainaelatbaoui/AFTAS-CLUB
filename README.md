@@ -1,105 +1,124 @@
-# Projet Aftas Club
+# Documentation pour la Configuration et l'Exécution des Applications dans Docker
 
-Le projet Aftas Club vise à moderniser la gestion des compétitions sportives du club Aftas à Tiznit. L'application web responsive permet à l'administration du club et au jury de gérer efficacement les compétitions de chasse sous-marine.
+Cette section fournit un guide détaillé sur la configuration et l'exécution des applications backend Spring Boot et frontend Angular dans un environnement Docker. Suivez attentivement ces étapes pour assurer une intégration réussie.
 
-## Contexte du Projet
+## Configuration du Backend (Spring Boot) :
 
-Aftas Club propose une variété d'activités sportives telles que le surf, le tennis, le quad, la pêche sous-marine et le parapente. Les compétitions de chasse sous-marine sont organisées régulièrement dans différentes régions du Maroc.
+### Étape 1: Vérification du Dockerfile
 
-## Fonctionnalités Principales
+Assurez-vous que le fichier `Dockerfile` dans le répertoire du backend est correctement configuré. Le fichier doit ressembler à ceci :
 
-- **Adhérent :** Gestion des informations des adhérents, y compris numéro d’adhésion, nom, prénom, pièce d’identification, nationalité et date d'adhésion.
-- **Compétition :** Enregistrement des compétitions avec un code unique, date, heure de début et de fin, nombre de participants et lieu.
+```Dockerfile
+FROM  maven:3.9.6-eclipse-temurin-21-jammy AS build
 
-## Exigences Techniques
+WORKDIR /app
 
-- Utilisation de Spring Boot pour l'API backend.
-- Architecture en couches pour une organisation claire du projet.
-- Validation de données pour assurer la qualité des informations.
-- Gestion centralisée des exceptions avec RestControllerAdvice.
-- Mise en place de la pagination pour une navigation facile.
-- Tests unitaires pour le service de calcul des résultats des compétitions.
+COPY ./pom.xml ./pom.xml
 
-## Exigences Fonctionnelles
+COPY ./src ./src
 
-- Ajout d'une nouvelle compétition.
-- Liste des compétitions avec filtres (en cours, fermées).
-- Inscription des adhérents aux compétitions.
-- Enregistrement des résultats de la compétition du jour.
-- Affichage du podium des trois premiers participants.
+RUN mvn clean package  -DskipTests
 
-## Configuration et Exécution du Projet
+FROM openjdk:17-jdk-slim
 
-Suivez ces étapes pour configurer et exécuter le projet localement :
+WORKDIR /app
 
-### Prérequis
+COPY --from=build /app/target/AFTASClub-backend-0.0.1-SNAPSHOT.jar /app/app.jar
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+EXPOSE 8081
 
-- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) (version recommandée : 11)
-- [Maven](https://maven.apache.org/download.cgi)
-- [Node.js](https://nodejs.org/) (pour Angular)
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) ou votre IDE préféré.
+CMD ["java", "-jar", "app.jar"]
+ ```
 
-### Clonage du Projet
+### Étape 2: Construction de l'image Docker pour le Backend
 
-1. Ouvrez votre terminal.
+Exécutez la commande suivante dans le terminal, situé à la racine du projet backend :
 
-2. Utilisez la commande suivante pour cloner le projet depuis le dépôt Git :
+```bash
+docker build -t backend-image ./AFTAS-backend
+```
 
-    ```bash
-    git clone https://github.com/votre-utilisateur/aftas-club.git
-    ```
+## Configuration du Frontend (Angular)
 
-### Importation dans l'IDE
+### Étape 1: Vérification du Dockerfile
+Vérifiez que le fichier Dockerfile dans le répertoire du frontend est correctement configuré. Voici un exemple :
 
-1. Ouvrez IntelliJ IDEA.
+```
+FROM node:18.13.0 as build
 
-2. Dans le menu principal, sélectionnez "File" -> "Open" et choisissez le répertoire du projet cloné.
+WORKDIR /app
 
-3. L'IDE détectera automatiquement qu'il s'agit d'un projet Maven et effectuera les configurations nécessaires.
+COPY package*.json ./
 
-### Configuration de l'API Backend (Spring Boot)
+RUN npm install
 
-1. Ouvrez le dossier du projet dans votre IDE.
+RUN npm install -g @angular/cli
 
-2. Naviguez vers le fichier `application.properties` ou `application.yml` dans le répertoire `src/main/resources`.
+COPY . .
 
-3. Configurez les paramètres de base de données et autres configurations selon vos besoins.
+RUN ng build --configuration=production
 
-### Exécution de l'API Backend
+FROM nginx:latest
 
-1. Recherchez et exécutez la classe principale `Application.java` dans le package `src/main/java`.
+COPY --from=build app/dist/aftas-frontend /usr/share/nginx/html
 
-2. L'application Spring Boot sera lancée et accessible à l'adresse `http://localhost:8080`.
+EXPOSE 80
+```
 
-### Configuration de l'Interface Utilisateur (Angular)
+### Étape 2: Construction de l'image Docker
+Exécutez la commande suivante dans le terminal, situé à la racine du projet frontend :
 
-1. Ouvrez le terminal.
+````
+docker build -t nom-du-frontend chemin-vers-le-frontend
+````
 
-2. Naviguez vers le répertoire `frontend` dans le projet.
+## Configuration de Docker Compose
+### Étape 1: Vérification du fichier docker-compose.yml
+Si vous utilisez Docker Compose, assurez-vous que le fichier docker-compose.yml est correctement configuré. Voici un exemple :
 
-3. Exécutez la commande suivante pour installer les dépendances Node.js :
+````
+version: '3'
 
-    ```bash
-    npm install
-    ```
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: aftas_club
+    ports:
+      - "3306:3306"
 
-### Exécution de l'Interface Utilisateur
+  spring-app:
+    build:
+      context: ./AFTAS-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/aftas_club?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ""
 
-1. Dans le même répertoire `frontend`, exécutez la commande suivante pour lancer l'application Angular :
+  aftas-frontend:
+    build:
+      context: ./AFTAS-frontend/aftas-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - spring-app
 
-    ```bash
-    ng serve
-    ```
+````
 
-2. L'interface utilisateur sera accessible à l'adresse `http://localhost:4200`.
+### Étape 2: Création et Démarrage des Conteneurs
+Exécutez la commande suivante dans le terminal :
 
----
+````docker-compose up --build ````
 
-**Note :** Ces instructions sont une base générale. Assurez-vous d'adapter les étapes en fonction de la structure spécifique de votre projet.
+## Vérification
+Ouvrez votre navigateur et accédez à l'URL spécifiée dans votre application frontend (par défaut, http://localhost:4200).
+Confirmez que votre application fonctionne correctement dans l'environnement Docker.
 
 
-## Licence
-
-Ce projet est sous licence [MIT License](LICENSE).

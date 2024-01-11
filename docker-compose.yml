@@ -11,7 +11,7 @@ services:
 
   spring-app:
     build:
-      context: .
+      context: ./AFTAS-backend
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
@@ -20,4 +20,13 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/aftas_club?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD:
+      SPRING_DATASOURCE_PASSWORD: ""
+
+  aftas-frontend:
+    build:
+      context: ./AFTAS-frontend/aftas-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - spring-app
