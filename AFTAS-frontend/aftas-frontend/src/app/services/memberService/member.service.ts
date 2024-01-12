@@ -17,7 +17,7 @@ export class MemberService {
   }
 
   createMember(member: Member): Observable<any> {
-    return this.http.post('http://localhost:8080/api/members', member, { responseType: 'text' });
+    return this.http.post('http://localhost:8081/api/members', member, { responseType: 'text' });
   }
   
 }

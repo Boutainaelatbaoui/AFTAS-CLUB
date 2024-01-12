@@ -15,5 +15,6 @@ RUN ng build --configuration=production
 FROM nginx:latest
 
 COPY --from=build app/dist/aftas-frontend /usr/share/nginx/html
-
+COPY node_modules/datatables.net-dt/css/jquery.dataTables.css /usr/share/nginx/html/assets/css/~datatables.net-dt/css/jquery.dataTables.css
+COPY node_modules/datatables.net/js/jquery.dataTables.js /usr/share/nginx/html/assets/js/~datatables.net/js/jquery.dataTables.js
 EXPOSE 80

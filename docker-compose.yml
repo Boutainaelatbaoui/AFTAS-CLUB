@@ -1,8 +1,14 @@
 version: '3'
 
+networks:
+  aftas-network:
+    driver: bridge
+
 services:
   mysql:
     image: mysql:latest
+    networks:
+      - aftas-network
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: aftas_club
@@ -14,9 +20,11 @@ services:
       context: ./AFTAS-backend
       dockerfile: Dockerfile
     ports:
-      - "8081:8081"
+      - "8081:8080"
     depends_on:
       - mysql
+    networks:
+      - aftas-network
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/aftas_club?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: root
@@ -27,6 +35,8 @@ services:
       context: ./AFTAS-frontend/aftas-frontend
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "4200:80"
     depends_on:
       - spring-app
+    networks:
+      - aftas-network
