@@ -3,6 +3,7 @@ package com.aftas.aftasbackend.service.implementations;
 import com.aftas.aftasbackend.enums.IdentityDocumentType;
 import com.aftas.aftasbackend.model.dto.CompetitionDTO;
 import com.aftas.aftasbackend.model.dto.MemberDTO;
+import com.aftas.aftasbackend.model.dto.request.RegisterRequest;
 import com.aftas.aftasbackend.model.entities.Competition;
 import com.aftas.aftasbackend.model.entities.Member;
 import com.aftas.aftasbackend.repository.MemberRepository;
@@ -60,18 +61,40 @@ public class MemberServiceImpl implements IMemberService {
 
     @Override
     public Member createMember(MemberDTO memberDTO) {
-        if (memberRepository.existsByIdentityNumber(memberDTO.getIdentityNumber())){
-            throw new ValidationException("The Identity Number is already exists.");
-        }
-        if (!memberDTO.getIdentityNumber().matches("^[A-Z]{2}\\d{8}$")) {
-            throw new ValidationException("Invalid member identity pattern");
-        }
+        validateIdentityNumber(memberDTO.getIdentityNumber());
+
         Member member = mapDTOToEntity(memberDTO);
         member.setNum(getMemberNum());
         member.setAccessionDate(LocalDate.now());
 
-        return memberRepository.save(member);
+        return member;
     }
+
+    @Override
+    public Member createMemberRegister(RegisterRequest memberDTO) {
+        validateIdentityNumber(memberDTO.getIdentityNumber());
+
+        return Member.builder()
+                .num(getMemberNum())
+                .name(memberDTO.getName())
+                .familyName(memberDTO.getFamilyName())
+                .accessionDate(LocalDate.now())
+                .nationality(memberDTO.getNationality())
+                .identityDocument(memberDTO.getIdentityDocument())
+                .identityNumber(memberDTO.getIdentityNumber())
+                .build();
+    }
+
+    private ValidationException validateIdentityNumber(String identityNumber) {
+        if (memberRepository.existsByIdentityNumber(identityNumber)){
+            throw new ValidationException("The Identity Number is already exists.");
+        }
+        if (!identityNumber.matches("^[A-Z]{2}\\d{8}$")) {
+            throw new ValidationException("Invalid member identity pattern");
+        }
+        return null;
+    }
+
 
     private Integer getMemberNum() {
         Optional<Integer> maxNum = memberRepository.findMaxNum();
