@@ -27,6 +27,7 @@ import org.springframework.stereotype.Service;
 
 import javax.security.sasl.AuthenticationException;
 import java.io.IOException;
+import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
@@ -49,12 +50,13 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .name(request.getName())
                 .familyName(request.getFamilyName())
                 .identityNumber(member.getIdentityNumber())
-                .accessionDate(member.getAccessionDate())
+                .accessionDate(LocalDate.now())
                 .identityDocument(member.getIdentityDocument())
                 .nationality(member.getNationality())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(userRole)
+                .enabled(false)
                 .build();
         userRepository.save(user);
         return authenticationResponse(user);
@@ -133,6 +135,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .id(user.getId())
                 .email(user.getEmail())
                 .roles(user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList())
+                .enabled(user.isEnabled())
                 .build();
     }
 

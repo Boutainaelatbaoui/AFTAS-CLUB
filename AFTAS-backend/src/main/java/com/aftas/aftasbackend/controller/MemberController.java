@@ -6,6 +6,7 @@ import com.aftas.aftasbackend.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
@@ -24,24 +25,28 @@ public class MemberController {
     }
 
     @PostMapping("")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
     public ResponseEntity<String> createMember(@RequestBody @Valid MemberDTO memberDTO) {
         memberService.createMember(memberDTO);
         return new ResponseEntity<>("Member created successfully", HttpStatus.CREATED);
     }
 
     @GetMapping("/all")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
     public ResponseEntity<List<MemberDTO>> getAllMembers() {
         List<MemberDTO> members = memberService.getAllMembers();
         return new ResponseEntity<>(members, HttpStatus.OK);
     }
 
     @GetMapping("/{memberId}")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
     public ResponseEntity<Member> getMemberById(@PathVariable Long memberId) {
         Member member = memberService.getMemberById(memberId);
         return new ResponseEntity<>(member, HttpStatus.OK);
     }
 
     @GetMapping("/search")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
     public ResponseEntity<List<MemberDTO>> searchMembers(
             @RequestParam(required = false) Integer num,
             @RequestParam(required = false) String name,
@@ -58,12 +63,14 @@ public class MemberController {
     }
 
     @PutMapping("/{memberId}")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_USERS')")
     public ResponseEntity<String> updateMember(@PathVariable Long memberId, @RequestBody @Valid MemberDTO memberDTO) {
         Member updatedMember = memberService.updateMember(memberId, memberDTO);
         return new ResponseEntity<>("The member has been updated.", HttpStatus.OK);
     }
 
     @DeleteMapping("/{memberId}")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_USERS')")
     public ResponseEntity<String> deleteMember(@PathVariable Long memberId) {
         memberService.deleteMember(memberId);
         return new ResponseEntity<>("The Member has been deleted.", HttpStatus.NO_CONTENT);

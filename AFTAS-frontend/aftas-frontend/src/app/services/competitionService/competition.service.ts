@@ -30,8 +30,5 @@ export class CompetitionService {
     const params = new HttpParams().set('page', page.toString()).set('size', size.toString());
     return this.http.get<CompetitionPage>(`${this.apiUrl}/v1/competitions/paged`, { params });
   }
-  
-  
-
 
 }

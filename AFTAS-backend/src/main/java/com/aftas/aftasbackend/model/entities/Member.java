@@ -51,6 +51,7 @@ public class Member implements UserDetails {
 
     @Column(name = "password")
     private String password;
+    private boolean enabled;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
@@ -109,6 +110,6 @@ public class Member implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return enabled;
     }
 }

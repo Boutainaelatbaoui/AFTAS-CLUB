@@ -18,6 +18,9 @@ import { MemberFormComponent } from './components/member/member-form/member-form
 import { CompetitionMemberFormComponent } from './components/competition/competition-member-form/competition-member-form.component';
 import { HuntingFormComponent } from './components/hunting/hunting-form/hunting-form.component';
 import { RankingTopComponent } from './components/ranking/ranking-top/ranking-top.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AccessDeniedComponent } from './components/errors/access-denied/access-denied.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { RankingTopComponent } from './components/ranking/ranking-top/ranking-to
     CompetitionMemberFormComponent,
     HuntingFormComponent,
     RankingTopComponent,
+    RegisterComponent,
+    AccessDeniedComponent,
+    LoginComponent,
   ],
   imports: [
     [BrowserModule, FormsModule],

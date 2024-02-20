@@ -42,5 +42,7 @@ public class RegisterRequest {
 
     @Min(value = 6, message = "The Password must has 6 or more caracters")
     private String password;
+
+    private boolean enabled;
     private Long role_id;
 }

@@ -16,7 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -56,13 +58,13 @@ public class StartUp implements CommandLineRunner {
         Role userRole = createRoleIfNotFound(RoleName.MEMBER, Arrays.asList(readPrivilege, readParPrivilege, readPodPrivilege));
         Role superAdminRole = createRoleIfNotFound(RoleName.MANAGER, Arrays.asList(readPrivilege, readParPrivilege, readPodPrivilege, manageComPrivilege, manageUserPrivilege));
 
-        Member adminUser = createUser(2, "Jury", "User",  "MA", IdentityDocumentType.CIN, "AC12315423", "adminpassword", "admin@example.com", adminRole);
+        Member adminUser = createUser(2, false, LocalDate.now(),"Jury", "User",  "MA", IdentityDocumentType.CIN, "AC12315423", "adminpassword", "admin@example.com", adminRole);
         userRepository.save(adminUser);
 
-        Member regularUser = createUser(3, "user", "user", "FR", IdentityDocumentType.CARTE_RESIDENCE, "AB12315423", "userpassword", "user@example.com", userRole);
+        Member regularUser = createUser(3, false, LocalDate.now(),"user", "user", "FR", IdentityDocumentType.CARTE_RESIDENCE, "AB12315423", "userpassword", "user@example.com", userRole);
         userRepository.save(regularUser);
 
-        Member superAdminUser = createUser(1, "Manager", "admin", "CA", IdentityDocumentType.PASSPORT, "AA12315423","superadminpassword", "super-admin@example.com", superAdminRole);
+        Member superAdminUser = createUser(1, false, LocalDate.now(),"Manager", "admin", "CA", IdentityDocumentType.PASSPORT, "AA12315423","superadminpassword", "super-admin@example.com", superAdminRole);
         userRepository.save(superAdminUser);
     }
 
@@ -76,7 +78,7 @@ public class StartUp implements CommandLineRunner {
                 .orElseGet(() -> roleRepository.save(Role.builder().name(name).privileges(privileges).build()));
     }
 
-    private Member createUser(int num, String name, String familyName, String nationality , IdentityDocumentType identityDocument, String identityNumber ,String password, String email, Role role) {
+    private Member createUser(int num, boolean enabled, LocalDate accesionDate, String name, String familyName, String nationality , IdentityDocumentType identityDocument, String identityNumber , String password, String email, Role role) {
         return userRepository.save(Member.builder()
                 .num(num)
                 .name(name)
@@ -87,6 +89,8 @@ public class StartUp implements CommandLineRunner {
                 .password(passwordEncoder.encode(password))
                 .email(email)
                 .role(role)
+                .enabled(enabled)
+                .accessionDate(accesionDate)
                 .build());
     }
 }

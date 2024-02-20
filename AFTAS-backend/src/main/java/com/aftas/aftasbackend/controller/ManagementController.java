@@ -1,43 +1,46 @@
 package com.aftas.aftasbackend.controller;
 
 
+import com.aftas.aftasbackend.service.IManagerService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/manager")
+@RequestMapping("/api/v1/admin")
 @RequiredArgsConstructor
 @Transactional
 @CrossOrigin(origins = "http://localhost:4200")
 public class ManagementController {
-    @GetMapping("/jury")
-    @PreAuthorize("hasRole('JURY') && hasAnyAuthority('CAN_READ', 'CAN_READ_PARTICIPATIONS', 'CAN_READ_PODIUM_INFO', 'CAN_MANAGE_COMPETITIONS')")
-    public String testAdminEndpoint() {
-        return "This endpoint is accessible by admins with edit or delete permissions.";
-    }
+    private final IManagerService managerService;
 
-    @GetMapping("/user")
-    @PreAuthorize("hasRole('user') && hasAnyAuthority('CAN_READ', 'CAN_READ_PARTICIPATIONS', 'CAN_READ_PODIUM_INFO')")
-    public String testUserEndpoint() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("Authentication: " + authentication);
-
-        return "This endpoint is accessible by users with add permission.";
+    @PutMapping("/activate/{userId}")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_USERS')")
+    public ResponseEntity<String> activateUser(@PathVariable Integer userId){
+        managerService.activateUser(userId);
+        return ResponseEntity.ok("User activated");
     }
 
 
-    @GetMapping("/manager")
-    @PreAuthorize("hasRole('manager') && hasAnyAuthority('CAN_READ', 'CAN_READ_PARTICIPATIONS', 'CAN_READ_PODIUM_INFO', 'CAN_MANAGE_COMPETITIONS', 'CAN_MANAGE_USERS')")
-    public String testSuperAdminEndpoint() {
-        return "This endpoint is accessible by super admins with edit, add, or delete permissions.";
+    @PutMapping("/deactivate/{userId}")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_USERS')")
+    public ResponseEntity<String> deactivateUser(@PathVariable Integer userId){
+        managerService.deactivateUser(userId);
+        return ResponseEntity.ok("User deactivated");
     }
+
+
+    @PutMapping("/updateRole/{userId}/{roleId}")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_USERS')")
+    public ResponseEntity<String> updateUserRole(@PathVariable Integer userId, @PathVariable Long roleId){
+        managerService.updateUserRole(userId, roleId);
+        return ResponseEntity.ok("User role updated");
+    }
+
 
 
 

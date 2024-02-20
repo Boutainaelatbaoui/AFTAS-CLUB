@@ -6,6 +6,7 @@ import com.aftas.aftasbackend.service.IHuntingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,18 +23,21 @@ public class HuntingController {
     }
 
     @PostMapping("")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
     public ResponseEntity<String> createHunting(@RequestBody HuntingDTO hunting) {
         Hunting result = huntingService.createHunting(hunting);
         return new ResponseEntity<>("The hunting is added successfully/", HttpStatus.OK);
     }
 
     @GetMapping("/all")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
     public ResponseEntity<List<HuntingDTO>> getAllHuntings() {
         List<HuntingDTO> huntings = huntingService.getAllHuntings();
         return new ResponseEntity<>(huntings, HttpStatus.OK);
     }
 
     @GetMapping("/{huntingId}")
+    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
     public ResponseEntity<HuntingDTO> getHuntingById(@PathVariable Long huntingId) {
         HuntingDTO hunting = huntingService.getHuntingById(huntingId);
         return new ResponseEntity<>(hunting, HttpStatus.OK);
