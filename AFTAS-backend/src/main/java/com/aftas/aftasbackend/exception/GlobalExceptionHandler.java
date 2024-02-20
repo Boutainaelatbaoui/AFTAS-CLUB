@@ -3,6 +3,7 @@ package com.aftas.aftasbackend.exception;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ValidationException;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
@@ -69,4 +70,5 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse("Access denied", e.getMessage());
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(errorResponse);
     }
+
 }

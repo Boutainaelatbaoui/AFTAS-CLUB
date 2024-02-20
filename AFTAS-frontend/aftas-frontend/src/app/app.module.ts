@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, FormGroup} from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 
@@ -21,6 +21,7 @@ import { RankingTopComponent } from './components/ranking/ranking-top/ranking-to
 import { RegisterComponent } from './components/register/register.component';
 import { AccessDeniedComponent } from './components/errors/access-denied/access-denied.component';
 import { LoginComponent } from './components/login/login.component';
+import { HttpInterceptor } from './helpers/http/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -41,12 +42,14 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent,
   ],
   imports: [
-    [BrowserModule, FormsModule],
+    [BrowserModule, FormsModule, ReactiveFormsModule],
       AppRoutingModule,
       HttpClientModule,
       MatPaginatorModule,
     ],
-    providers: [],
+    providers: [
+      { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true },
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

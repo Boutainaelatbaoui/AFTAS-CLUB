@@ -4,6 +4,7 @@ import { CompetitionService } from 'src/app/services/competitionService/competit
 import { Competition } from 'src/app/models/competition';
 import { formatDate } from '@angular/common';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-competition-form',
@@ -35,14 +36,14 @@ export class CompetitionFormComponent {
   
       this.competitionService.createCompetition(this.competition).subscribe(
         (createdCompetition) => {
-          console.log('Competition created successfully:', createdCompetition);
+          Swal.fire('Competition created', 'The competition has been created successfully', 'success');
           this.router.navigate(['/competitions']);
         },
         (error) => {
           console.error('Error creating competition:', error);
   
           const errorMessage = this.extractErrorMessage(error);
-          alert(`Error creating competition: ${errorMessage}`);
+          Swal.fire('Error creating competition', errorMessage, 'error');
         }
       );
     }

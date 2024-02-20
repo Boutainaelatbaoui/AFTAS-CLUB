@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container mt-5 mb-5 d-flex justify-content-center">
     <div class="col-6">
         <h2 class="fw-bold text-color pb-3">Member Form</h2>
@@ -5,19 +6,19 @@
             <form #memberForm="ngForm" (ngSubmit)="onSubmit(memberForm)">
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="member.name" required>
+                <input type="text" class="form-control" id="name" name="name" ngModel="member.name" required>
             </div>
             <div class="mb-3">
                 <label for="familyName" class="form-label">family Name:</label>
-                <input type="text" class="form-control" id="familyName" name="familyName" [(ngModel)]="member.familyName" required>
+                <input type="text" class="form-control" id="familyName" name="familyName" ngModel="member.familyName" required>
             </div>
             <div class="mb-3">
                 <label for="nationality" class="form-label">Nationality:</label>
-                <input type="text" class="form-control" id="nationality" name="nationality" [(ngModel)]="member.nationality" required>
+                <input type="text" class="form-control" id="nationality" name="nationality" ngModel="member.nationality" required>
             </div>
             <div class="mb-3">
                 <label for="identityDocument" class="form-label">Identity Document:</label>
-                <select id="identityDocument" [(ngModel)]="member.identityDocument" name="identityDocument" class="form-select" required>
+                <select id="identityDocument" ngModel="member.identityDocument" name="identityDocument" class="form-select" required>
                     <option value="CIN">CIN</option>
                     <option value="CARTE_RESIDENCE">CARTE RESIDENCE</option>
                     <option value="PASSPORT">PASSPORT</option>
@@ -25,7 +26,7 @@
             </div>
             <div class="mb-3">
                 <label for="identityNumber" class="form-label">Identity Number:</label>
-                <input type="text" class="form-control" id="identityNumber" name="identityNumber" [(ngModel)]="member.identityNumber" required>
+                <input type="text" class="form-control" id="identityNumber" name="identityNumber" ngModel="member.identityNumber" required>
             </div>
             <button type="submit" class="btn btn-primary" [disabled]="memberForm.invalid">Create member</button>
         </form>

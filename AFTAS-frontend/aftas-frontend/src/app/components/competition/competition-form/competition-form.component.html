@@ -1,39 +1,39 @@
+<app-navbar></app-navbar>
 <div class="container mt-5 mb-5 d-flex justify-content-center">
-    <div class="col-6">
-      <h2 class="fw-bold text-color pb-3">Competition Form</h2>
-      <div class="card card-menu p-3 mt-4">
-        <form #competitionForm="ngForm" (ngSubmit)="onSubmit(competitionForm)">
-          <div class="mb-3">
-            <label for="code" class="form-label">Code:</label>
-            <input type="text" class="form-control" id="code" name="code" [(ngModel)]="competition.code" required>
-          </div>
-          <div class="mb-3">
-            <label for="location" class="form-label">Location:</label>
-            <input type="text" class="form-control" id="location" name="location" [(ngModel)]="competition.location" required>
-          </div>
-          <div class="mb-3">
-            <label for="date" class="form-label">Date:</label>
-            <input type="date" class="form-control" id="date" name="date" [(ngModel)]="competition.date" required>
-          </div>
-          <div class="mb-3">
-            <label for="startTime" class="form-label">Start Time:</label>
-            <input type="time" class="form-control" id="startTime" name="startTime" [(ngModel)]="competition.startTime" required>
-          </div>
-          <div class="mb-3">
-            <label for="endTime" class="form-label">End Time:</label>
-            <input type="time" class="form-control" id="endTime" name="endTime" [(ngModel)]="competition.endTime" required>
-          </div>
-          <div class="mb-3">
-            <label for="limitParticipants" class="form-label">Limit Participants:</label>
-            <input type="number" class="form-control" id="limitParticipants" name="limitParticipants" [(ngModel)]="competition.limitParticipants" required>
-          </div>
-          <div class="mb-3">
-            <label for="amount" class="form-label">Amount:</label>
-            <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="competition.amount" required>
-          </div>
-          <button type="submit" class="btn btn-primary" [disabled]="competitionForm.invalid">Create Competition</button>
-        </form>
-      </div>
+  <div class="col-6">
+    <h2 class="fw-bold text-color pb-3">Competition Form</h2>
+    <div class="card card-menu p-3 mt-4">
+      <form #competitionForm="ngForm" (ngSubmit)="onSubmit(competitionForm)">
+        <div class="mb-3">
+          <label for="code" class="form-label">Code:</label>
+          <input type="text" class="form-control" id="code" name="code" [(ngModel)]="competition.code" required>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">Location:</label>
+          <input type="text" class="form-control" id="location" name="location" [(ngModel)]="competition.location" required>
+        </div>
+        <div class="mb-3">
+          <label for="date" class="form-label">Date:</label>
+          <input type="date" class="form-control" id="date" name="date" [(ngModel)]="competition.date" required>
+        </div>
+        <div class="mb-3">
+          <label for="startTime" class="form-label">Start Time:</label>
+          <input type="time" class="form-control" id="startTime" name="startTime" [(ngModel)]="competition.startTime" required>
+        </div>
+        <div class="mb-3">
+          <label for="endTime" class="form-label">End Time:</label>
+          <input type="time" class="form-control" id="endTime" name="endTime" [(ngModel)]="competition.endTime" required>
+        </div>
+        <div class="mb-3">
+          <label for="limitParticipants" class="form-label">Limit Participants:</label>
+          <input type="number" class="form-control" id="limitParticipants" name="limitParticipants" [(ngModel)]="competition.limitParticipants" required>
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount:</label>
+          <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="competition.amount" required>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="competitionForm.invalid">Create Competition</button>
+      </form>
     </div>
   </div>
-  
+</div>

@@ -10,18 +10,32 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { HuntingComponent } from './components/hunting/hunting.component';
 import { HuntingFormComponent } from './components/hunting/hunting-form/hunting-form.component';
 import { RankingTopComponent } from './components/ranking/ranking-top/ranking-top.component';
+import { LoginComponent } from './components/login/login.component';
+import { noAuthGuardGuard } from './helpers/noAuth/no-auth-guard.guard';
+import { RegisterComponent } from './components/register/register.component';
+import { authGuard } from './helpers/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path:'competition-form', component: CompetitionFormComponent },
-  { path: 'member-form', component: MemberFormComponent },
-  { path: 'competitions', component: CompetitionComponent },
-  { path: 'members', component: MemberComponent },
-  { path: 'rankings', component:RankingComponent },
-  { path:'hunting-form', component: HuntingFormComponent },
-  { path: 'huntings', component: HuntingComponent },
-  { path: 'ranking-top', component: RankingTopComponent },
-  { path: 'competition-member-form', component: CompetitionMemberFormComponent },
+  { path: '', component: HomePageComponent, canActivate: [authGuard] },
+  { path:'competition-form', component: CompetitionFormComponent, canActivate: [authGuard] },
+  { path: 'member-form', component: MemberFormComponent, canActivate: [authGuard] },
+  { path: 'competitions', component: CompetitionComponent, canActivate: [authGuard] },
+  { path: 'members', component: MemberComponent, canActivate: [authGuard] },
+  { path: 'rankings', component:RankingComponent, canActivate: [authGuard] },
+  { path:'hunting-form', component: HuntingFormComponent, canActivate: [authGuard] },
+  { path: 'huntings', component: HuntingComponent, canActivate: [authGuard] },
+  { path: 'ranking-top', component: RankingTopComponent, canActivate: [authGuard] },
+  { path: 'competition-member-form', component: CompetitionMemberFormComponent, canActivate: [authGuard] },
+  {
+    path: 'login',
+    component:LoginComponent,
+    canActivate: [noAuthGuardGuard]
+  },
+  {
+    path: 'register',
+    component:RegisterComponent,
+    canActivate: [noAuthGuardGuard]
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

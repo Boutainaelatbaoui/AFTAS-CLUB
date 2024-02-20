@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
 
 const USER_KEY = 'authenticated-user';
+const ACCESS_TOKEN_KEY = 'access-token';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,16 @@ export class StorageService {
     return null;
   }
 
+  saveAccessToken(token: string): void {
+    localStorage.setItem(ACCESS_TOKEN_KEY, token);
+  }
+
+  getAccessToken(): string | null {
+    return localStorage.getItem(ACCESS_TOKEN_KEY);
+  }
+
   clean(): void {    
-    window.localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(ACCESS_TOKEN_KEY);
   }
 }

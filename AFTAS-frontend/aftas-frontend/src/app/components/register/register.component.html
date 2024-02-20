@@ -1,1 +1,83 @@
-<p>register works!</p>
+<app-navbar></app-navbar>
+<main class="py-5">
+    <div class="container container container-log h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card-form mb-3 m-auto">
+                    <div class="row">
+                        <div class="col d-none d-lg-block">
+                            <img [src]="imageSection1" class="img-fluid img-form" id="img" alt="RH" style="min-height: 100% !important;">
+                        </div>
+                        <div class="col second-card">
+                            <div class="mx-5">
+                                <div class="text-center mb-3 mt-5">
+                                    <div>
+                                        <h4 class="login-text">Hey, Hello</h4>
+                                    </div>
+                                    <div>
+                                        <h5 class="login-detail">Create an account</h5>
+                                    </div>
+                                </div>
+                                <form [formGroup]="registrationForm" (ngSubmit)="register()" class="register-form">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label"> Name</label>
+                                        <div class="">
+                                            <input id="name" type="text" class="form-control" formControlName="name" autocomplete="name" autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="familyName" class="form-label">Family Name</label>
+                                        <div class="">
+                                            <input id="familyName" type="text" class="form-control" formControlName="familyName" autocomplete="familyName" autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nationality" class="form-label">Nationality:</label>
+                                        <div class="">
+                                            <input id="nationality" type="text" class="form-control" formControlName="nationality">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="identityDocument" class="form-label">Identity Document:</label>
+                                        <div class="">
+                                            <select id="identityDocument" class="form-control" formControlName="identityDocument">
+                                            <option value="PASSPORT">PASSPORT</option>
+                                            <option value="CIN">CIN</option>
+                                            <option value="CARTE_RESIDENCE">CARTE RESIDENCE</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="identityNumber" class="form-label">Identity Number:</label>
+                                        <div class="">
+                                            <input id="identityNumber" type="text" class="form-control" formControlName="identityNumber">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <div class="">
+                                            <input id="email" type="email" class="form-control" formControlName="email" autocomplete="email">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <div class="">
+                                            <input id="password" type="password" class="form-control" formControlName="password" autocomplete="new-password">
+                                        </div>
+                                    </div>
+                                    <div class="d-grid d-block mb-4 text-center">
+                                        <button type="submit" name="signup" class="btn main-btn text-white" id="signup">Create account</button>
+                                    </div>
+                                </form>
+                                <div class="login-mb">
+                                    <p class="text-center text-form">Already have an account? <button class="btn second-btn btn-sm">
+                                        <a routerLink="/login" class="text-decoration-none main-btn btn text-white text-center">Login</a></button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
