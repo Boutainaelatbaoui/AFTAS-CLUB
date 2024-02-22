@@ -11,7 +11,7 @@
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
             </div>
         </div>
-        <button routerLink="competition-member-form"  class="btn btn-outline-light rounded-5 fs-4 fw-bold py-2 px-4 mb-4" id="">Add Member to Competition</button>
+        <button routerLink="competition-member-form"  class="btn btn-outline-light rounded-5 fs-4 fw-bold py-2 px-4 mb-4" id="" *ngIf="showAdminBoard">Add Member to Competition</button>
     </div>
 </section>
 <div class="card card-home container mt-5 mb-5" [style.backgroundImage]="'url(' + getImageUrl() + ')'">

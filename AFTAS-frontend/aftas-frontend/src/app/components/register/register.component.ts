@@ -72,7 +72,7 @@ export class RegisterComponent {
     this.authService.register(registerData).subscribe(
       (response: AuthResponseData) => {
         console.log('Registration successful', response);
-        Swal.fire('Success!', 'Registration successful', 'success');
+        Swal.fire('Error!', 'Registration successfull But Your Account is Not Activated Yet !!!', 'error');
         this.router.navigate(['/']);
       },
       error => {

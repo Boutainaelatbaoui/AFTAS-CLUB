@@ -1,11 +1,11 @@
 package com.aftas.aftasbackend.model.entities;
 
 import com.aftas.aftasbackend.enums.RoleName;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -23,9 +23,11 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private RoleName name;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "role")
     private List<Member> members;
 
+    @JsonManagedReference
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "roles_privileges",

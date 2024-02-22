@@ -47,6 +47,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .orElseThrow(() -> new EntityNotFoundException("Role not found in the database"));
         Member member = memberService.createMemberRegister(request);
         var user = Member.builder()
+                .num(memberService.getMemberNum())
                 .name(request.getName())
                 .familyName(request.getFamilyName())
                 .identityNumber(member.getIdentityNumber())
@@ -134,8 +135,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .tokenType(TokenType.BEARER.name())
                 .id(user.getId())
                 .email(user.getEmail())
-                .roles(user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList())
-                .enabled(user.isEnabled())
                 .build();
     }
 

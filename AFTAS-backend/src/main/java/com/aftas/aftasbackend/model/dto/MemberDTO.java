@@ -1,6 +1,7 @@
 package com.aftas.aftasbackend.model.dto;
 
 import com.aftas.aftasbackend.enums.IdentityDocumentType;
+import com.aftas.aftasbackend.model.entities.Role;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.*;
@@ -11,6 +12,7 @@ import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -39,4 +41,8 @@ public class MemberDTO {
 
     @NotBlank(message = "Identity number cannot be blank")
     private String identityNumber;
+
+    private boolean enabled;
+    private Role role;
+
 }

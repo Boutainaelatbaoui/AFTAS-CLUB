@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-home-page',
@@ -11,4 +12,18 @@ export class HomePageComponent {
   }
   imageSection: string = 'assets/img/Hunt.png';
   imageSection1: string = 'assets/img/Hunt1.png';
+
+  constructor(private storageService : StorageService) {}
+
+  user = this.storageService.getSavedUser();
+  permissions = this.storageService.getPermissions();
+  showAdminBoard = false;
+
+  ngOnInit(): void {
+    if(this.user) {
+      console.log(this.user);
+      
+      this.showAdminBoard = this.permissions.includes('CAN_MANAGE_COMPETITIONS');
+    }
+  }
 }

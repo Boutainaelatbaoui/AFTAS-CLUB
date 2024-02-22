@@ -30,7 +30,7 @@ public class RankingController {
     }
 
     @GetMapping("/competition/{competitionId}")
-    @PreAuthorize("hasAuthority('CAN_MANAGE_COMPETITIONS')")
+    @PreAuthorize("hasAuthority('CAN_READ_PODIUM_INFO')")
     public List<Ranking> getRankingForCompetition(@PathVariable Long competitionId) {
         return rankingService.getRankingForCompetition(competitionId);
     }

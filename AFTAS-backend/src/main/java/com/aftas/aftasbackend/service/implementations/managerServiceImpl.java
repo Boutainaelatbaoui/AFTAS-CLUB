@@ -1,11 +1,14 @@
 package com.aftas.aftasbackend.service.implementations;
 
+import com.aftas.aftasbackend.model.entities.Role;
 import com.aftas.aftasbackend.repository.RoleRepository;
 import com.aftas.aftasbackend.repository.UserRepository;
 import com.aftas.aftasbackend.service.IManagerService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -39,5 +42,10 @@ public class managerServiceImpl implements IManagerService {
                 .orElseThrow(() -> new EntityNotFoundException("Role not found"));
         user.setRole(newRole);
         userRepository.save(user);
+    }
+
+    @Override
+    public List<Role> getAllRoles() {
+        return roleRepository.findAll();
     }
 }

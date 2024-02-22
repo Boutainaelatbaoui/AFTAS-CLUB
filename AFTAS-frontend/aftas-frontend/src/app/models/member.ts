@@ -6,5 +6,5 @@ export interface Member {
     accessionDate?: string;
     nationality: string;
     identityDocument: string;
-    identityNumber: string;
+    identityNumber: string
 }

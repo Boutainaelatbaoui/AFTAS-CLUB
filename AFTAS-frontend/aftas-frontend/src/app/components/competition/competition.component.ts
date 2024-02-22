@@ -3,6 +3,7 @@ import { Competition } from 'src/app/models/competition';
 import { CompetitionService } from 'src/app/services/competitionService/competition.service';
 import { PageEvent } from '@angular/material/paginator';
 import { CompetitionPage } from 'src/app/models/competition-page';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-competition',
@@ -19,10 +20,18 @@ export class CompetitionComponent implements OnInit {
   currentPage = 0;
   pageSize = 3;
 
-  constructor(private competitionService: CompetitionService) {}
+  constructor(private competitionService: CompetitionService, private storageService: StorageService) {}
+
+  user = this.storageService.getSavedUser();
+  permissions = this.storageService.getPermissions();
+  showAdminBoard = false;
 
   ngOnInit(): void {
-    this.loadCompetitions();
+    if(this.user) {
+      console.log(this.user);
+      this.showAdminBoard = this.permissions.includes('CAN_MANAGE_COMPETITIONS');
+      this.loadCompetitions();
+    }
   }
 
   loadCompetitions(): void {

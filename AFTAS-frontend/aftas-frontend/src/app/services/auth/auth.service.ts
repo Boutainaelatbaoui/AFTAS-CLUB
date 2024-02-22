@@ -26,15 +26,8 @@ export class AuthService {
     const user: User = {
       email: response.email,
       id: response.id,
-      role: {
-        name: response.roles.find((role) => role.includes('ROLE')) || '',
-        permissions: response.roles.filter(
-          (permission) => !permission.includes('ROLE')
-        ),
-      },
       token: response.access_token,
-      refreshToken: response.refresh_token,
-      enabled: response.enabled
+      refreshToken: response.refresh_token
 
     };
     this.storageService.saveUser(user);

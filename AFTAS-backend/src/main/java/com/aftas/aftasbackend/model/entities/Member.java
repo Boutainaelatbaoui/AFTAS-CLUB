@@ -39,11 +39,9 @@ public class Member implements UserDetails {
     private String identityNumber;
 
     @OneToMany(mappedBy = "member")
-    @ToString.Exclude
     private List<Hunting> huntings;
 
     @OneToMany(mappedBy = "member")
-    @ToString.Exclude
     private List<Ranking> competitions;
 
     @Column(name = "email")
@@ -64,16 +62,19 @@ public class Member implements UserDetails {
     public List<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
 
-        authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName().toString()));
+        if (role != null) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName().toString()));
 
-        for (Privilege privilege : role.getPrivileges()) {
-            authorities.add(new SimpleGrantedAuthority(privilege.getName().name()));
+            for (Privilege privilege : role.getPrivileges()) {
+                authorities.add(new SimpleGrantedAuthority(privilege.getName().name()));
+            }
         }
 
         System.out.println(authorities);
 
         return authorities;
     }
+
 
 
     @Override

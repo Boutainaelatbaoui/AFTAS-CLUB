@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public interface IMemberService {
     Member createMember(MemberDTO memberDTO);
+    Integer getMemberNum();
     Member createMemberRegister(RegisterRequest memberDTO);
     public Member getMemberById(Long memberId);
     List<MemberDTO> getAllMembers();

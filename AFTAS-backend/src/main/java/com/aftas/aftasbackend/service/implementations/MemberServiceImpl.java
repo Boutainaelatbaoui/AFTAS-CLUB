@@ -96,7 +96,8 @@ public class MemberServiceImpl implements IMemberService {
     }
 
 
-    private Integer getMemberNum() {
+    @Override
+    public Integer getMemberNum() {
         Optional<Integer> maxNum = memberRepository.findMaxNum();
         return maxNum.orElse(0) + 1;
     }
@@ -161,6 +162,8 @@ public class MemberServiceImpl implements IMemberService {
                 .nationality(member.getNationality())
                 .identityDocument(member.getIdentityDocument())
                 .identityNumber(member.getIdentityNumber())
+                .enabled(member.isEnabled())
+                .role(member.getRole())
                 .build();
     }
 

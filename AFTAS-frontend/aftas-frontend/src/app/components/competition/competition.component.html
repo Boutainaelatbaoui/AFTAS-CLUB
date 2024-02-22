@@ -3,8 +3,8 @@
     <div class="d-flex justify-content-between align-items-center">
         <h2 class="fw-bold text-color pb-3">Competitions</h2>
         <div>
-            <button routerLink="/competition-form"  class="btn main-btn text-white fs-6 fw-bold me-3 py-2 px-4 mb-4" id="">Create competition</button>
-            <button routerLink="/competition-member-form"  class="btn main-btn text-white fs-6 fw-bold py-2 px-4 mb-4" id="">Add Member to Competition</button>
+            <button routerLink="/competition-form"  class="btn main-btn text-white fs-6 fw-bold me-3 py-2 px-4 mb-4" id="" *ngIf="showAdminBoard">Create competition</button>
+            <button routerLink="/competition-member-form"  class="btn main-btn text-white fs-6 fw-bold py-2 px-4 mb-4" id="" *ngIf="showAdminBoard">Add Member to Competition</button>
         </div>
     </div>
     <div class="mt-4 d-flex gap-5 align-items-center mb-3">

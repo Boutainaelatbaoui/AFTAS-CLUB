@@ -5,6 +5,7 @@ import { MemberService } from 'src/app/services/memberService/member.service';
 import { Competition } from 'src/app/models/competition';
 import { Member } from 'src/app/models/member';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MemberResponse } from 'src/app/models/member-response';
 
 @Component({
   selector: 'app-competition-member-form',
@@ -13,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CompetitionMemberFormComponent implements OnInit {
   competitions: Competition[] = [];
-  members: Member[] = [];
+  members: MemberResponse[] = [];
   selectedCompetitionId: number = 0;
   selectedMemberId: number = 0;
 
