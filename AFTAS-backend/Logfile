@@ -10061,3 +10061,4 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired at 2024-02-27T13:32:01Z. Curren
 
 2024-02-27T14:39:53.385+01:00  WARN 13000 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1015ec79 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
 2024-02-27T14:39:53.386+01:00  WARN 13000 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2083c08e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-25T15:18:21.338+01:00  WARN 13000 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m30s59ms256µs).
