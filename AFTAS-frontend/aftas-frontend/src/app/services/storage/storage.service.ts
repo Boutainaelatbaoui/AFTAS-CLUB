@@ -26,6 +26,11 @@ export class StorageService {
     return null;
   }
 
+  getConnectedMemberId(): number | null {
+    const user = this.getSavedUser();
+    return user ? user.id : null;
+  }
+
   saveAccessToken(token: string): void {
     localStorage.setItem(ACCESS_TOKEN_KEY, token);
   }

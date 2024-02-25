@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { authGuard } from './helpers/auth/auth.guard';
 import { adminGuard } from './helpers/admin/admin-guard.guard';
 import { AccessDeniedComponent } from './components/errors/access-denied/access-denied.component';
+import { MemberCompetitionsComponent } from './components/competition/member-competitions/member-competitions.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -38,6 +39,11 @@ const routes: Routes = [
     path: 'register',
     component:RegisterComponent,
     canActivate: [noAuthGuardGuard]
+  },
+  {
+    path: 'member-competitions',
+    component: MemberCompetitionsComponent,
+    canActivate: [authGuard]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

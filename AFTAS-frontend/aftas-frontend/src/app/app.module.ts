@@ -22,6 +22,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AccessDeniedComponent } from './components/errors/access-denied/access-denied.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpInterceptor } from './helpers/http/http.interceptor';
+import { MemberCompetitionsComponent } from './components/competition/member-competitions/member-competitions.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { HttpInterceptor } from './helpers/http/http.interceptor';
     RegisterComponent,
     AccessDeniedComponent,
     LoginComponent,
+    MemberCompetitionsComponent,
   ],
   imports: [
     [BrowserModule, FormsModule, ReactiveFormsModule],
