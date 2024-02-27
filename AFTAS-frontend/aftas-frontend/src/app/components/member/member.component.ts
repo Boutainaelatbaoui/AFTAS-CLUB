@@ -17,7 +17,7 @@ declare var $: any;
 export class MemberComponent implements OnInit {
   members: MemberResponse[] = [];
   roles: Role[] = [];
-  selectedRoleId: number | null = null;
+  selectedRoleIds: { [memberId: number]: any | null } = {};
   
   constructor(private memberService: MemberService, private storageService: StorageService) {}
 
@@ -36,6 +36,7 @@ export class MemberComponent implements OnInit {
     this.loadRoles();
     this.memberService.getMembers().subscribe((result) => {
       this.members = result;
+      this.initializeSelectedRoleIds();
 
       $(document).ready(() => {
         $('#memberDataTable').DataTable();
@@ -54,17 +55,23 @@ export class MemberComponent implements OnInit {
     );
   }
 
-  updateUserRole(id: any): void {
-    if (this.selectedRoleId !== null) {
-      this.memberService.updateMemberRole(id, this.selectedRoleId).subscribe(
-        () => {
-          Swal.fire('Success','User role updated successfully', 'success');
-        },
-        (error) => {
-          Swal.fire('Error','Error updating user role', 'error');
-        }
-      );
-    }
+  initializeSelectedRoleIds() {
+    this.members.forEach(member => {
+      this.selectedRoleIds[member.id] = member.role ? member.role.id : null;
+    });
+  }
+
+  updateUserRole(memberId: number): void {
+    const selectedRoleId = this.selectedRoleIds[memberId];
+
+    this.memberService.updateMemberRole(memberId, selectedRoleId).subscribe(
+      () => {
+        Swal.fire('Success','Role updated successfully', 'success');
+      },
+      (error) => {
+        Swal.fire('Error','Error updating role', 'error');
+      }
+    );
   }
 
   activateUser(userId: number): void {

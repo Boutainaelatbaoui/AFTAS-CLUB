@@ -1,5 +1,6 @@
 package com.aftas.aftasbackend.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -23,8 +24,8 @@ public class Fish implements Serializable {
     private String name;
     private Double averageWeight;
 
-    @OneToMany(mappedBy = "fish")
     @JsonIgnore
+    @OneToMany(mappedBy = "fish")
     private List<Hunting> huntings;
 
     @ManyToOne

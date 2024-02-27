@@ -1,5 +1,6 @@
 package com.aftas.aftasbackend.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,7 +23,7 @@ public class Level {
     private String description;
     private Integer points;
 
-    @OneToMany(mappedBy = "level")
     @JsonIgnore
+    @OneToMany(mappedBy = "level")
     private List<Fish> fishes;
 }

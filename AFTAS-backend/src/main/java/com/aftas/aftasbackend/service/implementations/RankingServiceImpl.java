@@ -82,5 +82,12 @@ public class RankingServiceImpl implements IRankingService {
         return rankingRepository.findAll();
     }
 
+    @Override
+    public List<Competition> getMemberCompetitions(Long memberId) {
+        return rankingRepository.findByMemberId(memberId).stream()
+                .map(Ranking::getCompetition)
+                .collect(Collectors.toList());
+    }
+
 
 }

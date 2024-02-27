@@ -15,5 +15,6 @@ public interface RankingRepository extends JpaRepository<Ranking, Long> {
     boolean existsByCompetitionAndMember(Competition competition, Member member);
     Optional<Ranking> findByCompetitionAndMember(Competition competition, Member member);
     List<Ranking> findByCompetitionOrderByScoreDesc(Competition competition);
+    List<Ranking> findByMemberId(Long memberId);
 }
 

@@ -1,7 +1,9 @@
 package com.aftas.aftasbackend.model.entities;
 
 import com.aftas.aftasbackend.enums.IdentityDocumentType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -38,9 +40,11 @@ public class Member implements UserDetails {
 
     private String identityNumber;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Hunting> huntings;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Ranking> competitions;
 
@@ -55,6 +59,7 @@ public class Member implements UserDetails {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Token> tokens;
 

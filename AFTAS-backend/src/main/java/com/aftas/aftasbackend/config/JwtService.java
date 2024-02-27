@@ -20,8 +20,10 @@ import java.util.stream.Collectors;
 @Service
 public class JwtService {
     private static final String SECRET_KEY = "6A335255515654786E676341565752614A586D423679644E65706F31484E4A6E";
-    private  static final int jwtExpiration = 60000;
-    private  static final int refreshExpiration = 180000;
+//    private  static final int jwtExpiration = 60000;
+//    private  static final int refreshExpiration = 180000;
+    private static final int jwtExpiration = 86400000;
+    private static final int refreshExpiration = 172800000;
 
     public String extractUserName(String token) {
         return extractClaim(token, Claims::getSubject);

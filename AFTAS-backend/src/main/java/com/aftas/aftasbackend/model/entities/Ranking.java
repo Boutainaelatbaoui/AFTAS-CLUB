@@ -1,6 +1,7 @@
 package com.aftas.aftasbackend.model.entities;
 
 import com.aftas.aftasbackend.model.entities.embedded.MemberCompetition;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 

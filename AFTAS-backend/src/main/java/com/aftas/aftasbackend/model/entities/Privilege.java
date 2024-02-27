@@ -22,7 +22,7 @@ public class Privilege {
     @Enumerated(EnumType.STRING)
     private Permission name;
 
-    @JsonBackReference
+    @JsonIgnore
     @ManyToMany(mappedBy = "privileges", fetch = FetchType.EAGER)
     private List<Role> roles;
 }

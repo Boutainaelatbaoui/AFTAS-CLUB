@@ -23,11 +23,10 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private RoleName name;
 
-    @JsonBackReference
+    @JsonIgnore
     @OneToMany(mappedBy = "role")
     private List<Member> members;
 
-    @JsonManagedReference
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "roles_privileges",

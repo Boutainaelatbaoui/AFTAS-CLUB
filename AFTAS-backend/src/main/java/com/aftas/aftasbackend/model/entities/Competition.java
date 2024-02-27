@@ -1,6 +1,8 @@
 package com.aftas.aftasbackend.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,11 +38,11 @@ public class Competition {
     private Double amount;
     private Integer limitParticipants;
 
-    @OneToMany(mappedBy = "competition")
     @JsonIgnore
+    @OneToMany(mappedBy = "competition")
     private List<Hunting> huntings;
 
-    @OneToMany(mappedBy = "competition")
     @JsonIgnore
+    @OneToMany(mappedBy = "competition")
     private List<Ranking> members;
 }

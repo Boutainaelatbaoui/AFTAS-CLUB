@@ -30,7 +30,7 @@
             <td>{{ member.identityNumber }}</td>
             <td>
                 <p>{{ member.role.name }}</p>
-                <select class="form-select" name="selectedRole" [(ngModel)]="selectedRoleId" (change)="updateUserRole(member.id)" *ngIf="showManagerBoard" [disabled]="member.id === 1">
+                <select class="form-select" name="selectedRole" [(ngModel)]="selectedRoleIds[member.id]" (change)="updateUserRole(member.id)" *ngIf="showManagerBoard" [disabled]="member.id === 1">
                     <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
                 </select>
             </td>
